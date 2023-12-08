@@ -19,6 +19,25 @@
       },
       "title": "TQH-Jellyfin",
       "type": 3
-    }
+    },
+    {
+      "categories": [
+        "TQH-Apps",
+        "Video",
+        "Music",
+        "Photos"
+      ],
+      "description": "Plex organizes your video, music, and photo collections and streams them to all of your screens.",
+      "logo": "https://mediadepot.github.io/templates/img/plex-icon.png",
+      "name": "TQH-Plex",
+      "note": "transcode",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "TQH-Apps/plex.yml",
+        "url": "https://github.com/minhtribtc/TQH-HomeServer"
+      },
+      "title": "TQH-Plex",
+      "type": 3
+    },
   ]
 }
