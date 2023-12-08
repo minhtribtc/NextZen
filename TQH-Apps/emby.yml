@@ -1,0 +1,26 @@
+---
+version: "2.1"
+services:
+  emby:
+    image: lscr.io/linuxserver/emby:latest
+    container_name: TQH-emby
+    hostname: TQH-emby
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Asia/Ho_Chi_Minh
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - emby:/config
+      - /srv:/srv
+    ports:
+      - 8098:8096
+      - 8928:8920 #optional
+    network_mode: bridge
+    restart: unless-stopped
+volumes:
+  emby:
+
+
+
