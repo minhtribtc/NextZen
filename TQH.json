@@ -102,12 +102,12 @@
         }
       ],
       "image": "linuxserver/syncthing:latest",
-{
-  "hostname": "TQH-Syncthing"
-}
-{
-  "restart_policy": "unless-stopped"
-}
+        {
+          "hostname": "TQH-Syncthing"
+        }
+        {
+          "restart_policy": "unless-stopped"
+        }
       "name": "TQH-Syncthing NAS",
       "note": "Syncthing",
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/syncthing-icon.png",
