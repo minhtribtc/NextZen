@@ -1,7 +1,7 @@
 {
   "version": "2",
   "templates": [
-    {
+    { # test 1
       "categories": [
         "TQH Apps",
         "Cloud",
@@ -20,7 +20,7 @@
       "title": "TQH Nextcloud AIO NAS",
       "type": 3
     },
-    {
+    { # test 2
       "categories": [
         "TQH Apps",
         "Video",
@@ -45,7 +45,7 @@
         "Video",
         "Music",
         "Photos"
-      ],
+      ], # test 3
       "description": "Plex organizes your video, music, and photo collections and streams them to all of your screens.",
       "logo": "https://mediadepot.github.io/templates/img/plex-icon.png",
       "name": "TQH-Plex-NAS",
