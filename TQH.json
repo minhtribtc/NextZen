@@ -81,7 +81,7 @@
       "category": [
         "Backup:",
         "Cloud",
-        "Other",
+        "TQH Apps",
         "Tools"
       ],
       "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
@@ -89,20 +89,25 @@
         {
           "label": "PUID",
           "name": "PUID",
-          "set": "1000"
+          "default": "1000"
         },
         {
           "label": "PGID",
           "name": "PGID",
-          "set": "1000"
+          "default": "100"
         },
         {
           "label": "TZ",
           "name": "TZ",
-          "set": "America/Chicago"
+          "default": "Asia/Ho_Chi_Minh"
         }
       ],
+      "name": "TQH-Syncthing-NAS",
       "image": "linuxserver/syncthing:latest",
+      "network": "bridge"
+      "restart_policy": "unless-stopped"
+      "hostname": "TQH-Syncthing-NAS"
+      "note": "Sync"
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/syncthing-icon.png",
       "platform": "linux",
       "ports": [
@@ -110,14 +115,19 @@
         "21027/udp",
         "22000/tcp"
       ],
-      "title": "syncthing",
+      "title": "TQH Syncthing NAS",
       "type": 1,
       "volumes": [
         {
           "container": "/config"
         },
         {
-          "container": "/sync"
+          "container": "/sync",
+          "bind": "/srv"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
         }
       ]
     }
