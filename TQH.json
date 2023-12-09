@@ -144,7 +144,7 @@
       "image": "adguard/adguardhome:latest",
       "network": "bridge",
       "restart_policy": "unless-stopped",
-      "hostname": "TQH-Syncthing-NAS",
+      "hostname": "TQH-AdguardHome",
       "note": "Sync",
       "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
       "platform": "linux",
