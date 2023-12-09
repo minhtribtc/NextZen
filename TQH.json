@@ -167,7 +167,7 @@
       "type": 1,
       "volumes": [
         {
-          "container": "//opt/adguardhome/work",
+          "container": "/opt/adguardhome/work",
           "bind": "TQH-AdguardHome"
 
         },
