@@ -187,7 +187,7 @@
         {
           "container": "/opt/adguardhome/conf",
           "bind": "TQH-AguardHome"
-        },
+        }
       ]
     }
   ]
