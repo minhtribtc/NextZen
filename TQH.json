@@ -1,7 +1,7 @@
 {
   "version": "2",
   "templates": [
-    {
+    { #Nextcloud-AIO-NAS
       "categories": [
         "TQH Apps",
         "Cloud",
@@ -76,6 +76,6 @@
       },
       "title": "TQH Emby NAS",
       "type": 3
-    }
+    },
   ]
 }
