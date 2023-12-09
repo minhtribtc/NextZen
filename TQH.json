@@ -3,7 +3,7 @@
   "templates": [
     {
       "categories": [
-        "TQH-Apps",
+        "TQH Apps",
         "Cloud",
         "Web",
         "Photos"
@@ -17,12 +17,12 @@
         "stackfile": "TQH-Apps/nextcloudaio.yml",
         "url": "https://github.com/minhtribtc/TQH-HomeServer"
       },
-      "title": "TQH-Nextcloud AIO NAS",
+      "title": "TQH Nextcloud AIO NAS",
       "type": 3
     },
     {
       "categories": [
-        "TQH-Apps",
+        "TQH Apps",
         "Video",
         "Music",
         "Photos"
@@ -36,12 +36,12 @@
         "stackfile": "TQH-Apps/jellyfin.yml",
         "url": "https://github.com/minhtribtc/TQH-HomeServer"
       },
-      "title": "TQH-Jellyfin-NAS",
+      "title": "TQH Jellyfin NAS",
       "type": 3
     },
     {
       "categories": [
-        "TQH-Apps",
+        "TQH Apps",
         "Video",
         "Music",
         "Photos"
@@ -55,12 +55,12 @@
         "stackfile": "TQH-Apps/plex.yml",
         "url": "https://github.com/minhtribtc/TQH-HomeServer"
       },
-      "title": "TQH-Plex-NAS",
+      "title": "TQH Plex NAS",
       "type": 3
     },
     {
       "categories": [
-        "TQH-Apps",
+        "TQH Apps",
         "Video",
         "Music",
         "Photos"
@@ -74,7 +74,7 @@
         "stackfile": "TQH-Apps/emby.yml",
         "url": "https://github.com/minhtribtc/TQH-HomeServer"
       },
-      "title": "TQH-Emby-NAS",
+      "title": "TQH Emby NAS",
       "type": 3
     }
   ]
