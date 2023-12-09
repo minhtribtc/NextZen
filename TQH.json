@@ -1,7 +1,7 @@
 {
   "version": "2",
   "templates": [
-    { #Nextcloud-AIO-NAS
+    { #TQH-Nextcloud-AIO-NAS
       "categories": [
         "TQH Apps",
         "Cloud",
@@ -20,7 +20,7 @@
       "title": "TQH Nextcloud AIO NAS",
       "type": 3
     },
-    {
+    { #TQH-Jellyfin-NAS
       "categories": [
         "TQH Apps",
         "Video",
@@ -39,7 +39,7 @@
       "title": "TQH Jellyfin NAS",
       "type": 3
     },
-    {
+    { #TQH-Plex-NAS
       "categories": [
         "TQH Apps",
         "Video",
@@ -58,7 +58,7 @@
       "title": "TQH Plex NAS",
       "type": 3
     },
-    {
+    { #TQH-Emby-NAS
       "categories": [
         "TQH Apps",
         "Video",
@@ -77,5 +77,49 @@
       "title": "TQH Emby NAS",
       "type": 3
     },
+    {
+      "category": [
+        "Backup:",
+        "Cloud",
+        "Other",
+        "Tools"
+      ],
+      "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
+      "env": [
+        {
+          "label": "PUID",
+          "name": "PUID",
+          "set": "1000"
+        },
+        {
+          "label": "PGID",
+          "name": "PGID",
+          "set": "1000"
+        },
+        {
+          "label": "TZ",
+          "name": "TZ",
+          "set": "America/Chicago"
+        }
+      ],
+      "image": "linuxserver/syncthing:latest",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/syncthing-icon.png",
+      "platform": "linux",
+      "ports": [
+        "8384/tcp",
+        "21027/udp",
+        "22000/tcp"
+      ],
+      "title": "syncthing",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config"
+        },
+        {
+          "container": "/sync"
+        }
+      ]
+    }
   ]
 }
