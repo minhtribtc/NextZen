@@ -76,54 +76,6 @@
       },
       "title": "TQH Emby NAS",
       "type": 3
-    },
-    {
-      "category": [
-        "Backup:",
-        "Cloud",
-        "TQH Apps",
-        "Tools"
-      ],
-      "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
-      "env": [
-        {
-          "label": "PUID",
-          "name": "PUID",
-          "set": "1000"
-        },
-        {
-          "label": "PGID",
-          "name": "PGID",
-          "set": "100"
-        },
-        {
-          "label": "TZ",
-          "name": "TZ",
-          "set": "Asia/Ho_Chi_Minh"
-        }
-      ],
-      "image": "linuxserver/syncthing:latest",
-      "hostname": "TQH-Syncthing"
-      "restart_policy": "unless-stopped"
-      "name": "TQH-Syncthing NAS",
-      "note": "Syncthing",
-      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/syncthing-icon.png",
-      "platform": "linux",
-      "ports": [
-        "8384/tcp",
-        "21027/udp",
-        "22000/tcp"
-      ],
-      "title": "TQH Syncthing NAS",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/config"
-        },
-        {
-          "container": "/sync"
-        }
-      ]
     }
   ]
 }
