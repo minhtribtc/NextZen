@@ -102,10 +102,12 @@
           "default": "Asia/Ho_Chi_Minh"
         }
       ],
+      "name": "TQH-Syncthing-NAS",
       "image": "linuxserver/syncthing:latest",
-      "network": "bridge"
-      "restart_policy": "unless-stopped"
-      "hostname": "TQH-Syncthing-NAS"
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Syncthing-NAS",
+      "note": "Sync",
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/syncthing-icon.png",
       "platform": "linux",
       "ports": [
@@ -128,6 +130,6 @@
           "bind": "/srv"
         }
       ]
-    }
+    },
   ]
 }
