@@ -146,7 +146,7 @@
       "restart_policy": "unless-stopped",
       "hostname": "TQH-AdguardHome",
       "note": "Sync",
-      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
+      "logo": "https://static-00.iconduck.com/assets.00/adguard-home-icon-507x512-ovjn0dm6.png",
       "platform": "linux",
       "ports": [
         "53:53/tcp",
