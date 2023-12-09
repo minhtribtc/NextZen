@@ -111,15 +111,17 @@
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/syncthing-icon.png",
       "platform": "linux",
       "ports": [
-        "8384/tcp",
-        "21027/udp",
-        "22000/tcp"
+        "8384:8384/tcp",
+        "21027:21027/udp",
+        "22000:22000/tcp"
       ],
       "title": "TQH Syncthing NAS",
       "type": 1,
       "volumes": [
         {
-          "container": "/config"
+          "container": "/config",
+          "bind": "TQH-Syncthing-NAS"
+
         },
         {
           "container": "/sync",
