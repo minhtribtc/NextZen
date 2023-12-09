@@ -4,6 +4,25 @@
     {
       "categories": [
         "TQH-Apps",
+        "Cloud",
+        "Web",
+        "Photos"
+      ],
+      "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/nextcloud-icon.png",
+      "name": "TQH-Nextcloud",
+      "note": "enable transcode",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "TQH-Apps/nextcloudaio.yml",
+        "url": "https://github.com/minhtribtc/TQH-HomeServer"
+      },
+      "title": "TQH-Nextcloud",
+      "type": 3
+    },
+    {
+      "categories": [
+        "TQH-Apps",
         "Video",
         "Music",
         "Photos"
@@ -11,7 +30,7 @@
       "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
       "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
       "name": "TQH-Jellyfin",
-      "note": "transcode",
+      "note": "enable transcode",
       "platform": "linux",
       "repository": {
         "stackfile": "TQH-Apps/jellyfin.yml",
@@ -30,7 +49,7 @@
       "description": "Plex organizes your video, music, and photo collections and streams them to all of your screens.",
       "logo": "https://mediadepot.github.io/templates/img/plex-icon.png",
       "name": "TQH-Plex",
-      "note": "transcode",
+      "note": "enable transcode",
       "platform": "linux",
       "repository": {
         "stackfile": "TQH-Apps/plex.yml",
