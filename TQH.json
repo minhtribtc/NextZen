@@ -11,7 +11,7 @@
       "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/nextcloud-icon.png",
       "name": "TQH-Nextcloud-AIO-NAS",
-      "note": "enable transcode",
+      "note": "TQH Apps",
       "platform": "linux",
       "repository": {
         "stackfile": "TQH-Apps/nextcloudaio.yml",
@@ -30,7 +30,7 @@
       "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
       "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
       "name": "TQH-Jellyfin-NAS",
-      "note": "enable transcode",
+      "note": "TQH Apps",
       "platform": "linux",
       "repository": {
         "stackfile": "TQH-Apps/jellyfin.yml",
@@ -49,7 +49,7 @@
       "description": "Plex organizes your video, music, and photo collections and streams them to all of your screens.",
       "logo": "https://mediadepot.github.io/templates/img/plex-icon.png",
       "name": "TQH-Plex-NAS",
-      "note": "enable transcode",
+      "note": "TQH Apps",
       "platform": "linux",
       "repository": {
         "stackfile": "TQH-Apps/plex.yml",
@@ -68,7 +68,7 @@
       "description": "Emby organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
       "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/emby.png",
       "name": "TQH-Emby-NAS",
-      "note": "enable transcode",
+      "note": "TQH Apps",
       "platform": "linux",
       "repository": {
         "stackfile": "TQH-Apps/emby.yml",
@@ -107,7 +107,7 @@
       "network": "bridge",
       "restart_policy": "unless-stopped",
       "hostname": "TQH-Syncthing-NAS",
-      "note": "Sync",
+      "note": "TQH Apps",
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/syncthing-icon.png",
       "platform": "linux",
       "ports": [
@@ -145,7 +145,7 @@
       "network": "bridge",
       "restart_policy": "unless-stopped",
       "hostname": "TQH-AdguardHome",
-      "note": "Sync",
+      "note": "TQH Apps",
       "logo": "https://static-00.iconduck.com/assets.00/adguard-home-icon-507x512-ovjn0dm6.png",
       "platform": "linux",
       "ports": [
@@ -178,49 +178,42 @@
       ]
     },
     {
-      "categories": ["Video", "Music", "Photos"],
-      "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
+      "categories": [
+        "Network",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Cloudflare DDNS - A small and fast DDNS updater for Cloudflare.",
+      "image": "oznu/cloudflare-ddns",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/cloudflare-ddns.png",
+      "platform": "linux",
+      "title": "TQH Cloudflare DDNS",
+      "type": 1,
       "env": [
         {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
+          "label": "DOMAIN",
+          "name": "ZONE",
+          "description": "Nhập tên miền chính của bạn, ví dụ: TQH.vn"
         },
         {
-          "default": "100",
-          "label": "PGID",
-          "name": "PGID"
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAIN",
+          "description": "Nhập tên miền phụ nếu có, ví dụ: CLOUD.TQH.vn thì chỉ nhập duy nhất CLOUD"
         },
         {
-          "label": "TZ",
-          "name": "TZ"
+          "label": "EMAIL",
+          "name": "EMAIL",
+          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền của bạn"
+        },
+        {
+          "label": "GLOBAL API KEY",
+          "name": "API_KEY",
+          "description": "Nhập Cloudflare global api key theo tài khoản của bạn"
         }
       ],
-      "image": "linuxserver/jellyfin:latest",
-      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
-      "name": "jellyfin",
-      "devices": [
-        "/dev/dri:/dev/dri"
-      ],
-      "platform": "linux",
-      "ports": ["8096:8096/tcp", "8920:8920/tcp"],
-      "restart_policy": "unless-stopped",
-      "title": "Jellyfin",
-      "type": 1,
-      "volumes": [
-        {
-          "bind": "/portainer/Files/AppData/Config/Jellyfin",
-          "container": "/config"
-        },
-        {
-          "bind": "/portainer/TV",
-          "container": "/data/tvshows"
-        },
-        {
-          "bind": "/portainer/Movies",
-          "container": "/data/movies"
-        }
-      ]
     }
   ]
 }
