@@ -681,24 +681,11 @@
           "description": "Nhập ROOT PASSWORD"
         },
         {
-          "label": "MYSQL USER",
-          "name": "MYSQL_USER",
-          "default": "homeserver",
-          "description": "Tạo người dùng mới"
-        },
-        {
-          "label": "MYSQL PASSWORD",
-          "name": "MYSQL_PASSWORD",
-          "default": "Smart*home@TQH",
-          "description": "Tạo mật khẩu người dùng mới"
-        },
-        {
-          "label": "NEW MYSQL_DATABASE",
+          "label": "MYSQL DATABASE",
           "name": "MYSQL_DATABASE",
           "default": "homeserver",
-          "description": "Tạo DATABASE mới"
+          "description": "Tạo một DATABASE mới"
         }
-
       ],
       "name": "TQH-MySQL",
       "image": "mysql",
@@ -750,24 +737,11 @@
           "description": "Nhập ROOT PASSWORD"
         },
         {
-          "label": "MARIADB USER",
-          "name": "MYSQL_USER",
-          "default": "homeserver",
-          "description": "Tạo người dùng mới"
-        },
-        {
-          "label": "MARIADB PASSWORD",
-          "name": "MYSQL_PASSWORD",
-          "default": "Smart*home@TQH",
-          "description": "Tạo mật khẩu người dùng mới"
-        },
-        {
-          "label": "NEW MARIADB_DATABASE",
+          "label": "MARIADB DATABASE",
           "name": "MYSQL_DATABASE",
           "default": "homeserver",
-          "description": "Tạo DATABASE mới"
+          "description": "Tạo một DATABASE mới"
         }
-
       ],
       "name": "TQH-MariaDB",
       "image": "lscr.io/linuxserver/mariadb:latest",
@@ -785,6 +759,47 @@
         {
           "container": "/config",
           "bind": "TQH-MariaDB"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "The most advanced open-source database",
+      "env": [
+        {
+          "label": "POSTGRES PASSWORD",
+          "name": "POSTGRES_PASSWORD",
+          "default": "Smart*home@TQH",
+          "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "POSTGRES DATABASE",
+          "name": "POSTGRES_DB",
+          "default": "homeserver",
+          "description": "Tạo một DATABASE mới"
+        }
+      ],
+      "name": "TQH-Postgres",
+      "image": "postgres",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+      "platform": "linux",
+      "ports": [
+        "5432:5432/tcp"
+      ],
+      "title": "TQH Postgres",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/postgresql/data",
+          "bind": "TQH-Postgres"
         }
       ]
     },
@@ -845,52 +860,49 @@
         "TQH Apps",
         "Tools"
       ],
-      "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
+      "description": "WordPress setup with a MySQL database",
       "env": [
         {
-          "label": "User ID",
-          "name": "PUID",
-          "default": "1000"
+          "label": "DATABASE HOST",
+          "name": "WORDPRESS_DB_HOST",
+          "default": "10.0.0.7:3306",
+          "description": "Nhập địa chỉ ip hoặc hostname và port của DATABASE"
         },
         {
-          "label": "Group ID",
-          "name": "PGID",
-          "default": "100"
+          "label": "DATABASE USER",
+          "name": "WORDPRESS_DB_USER",
+          "default": "root",
+          "description": "Nhập DATABASE username"
         },
         {
-          "label": "Time Zone",
-          "name": "TZ",
-          "default": "Asia/Ho_Chi_Minh"
+          "label": "DATABASE PASSWORD",
+          "name": "WORDPRESS_DB_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập DATABASE password"
+        },
+        {
+          "label": "DATABASE NAME",
+          "name": "WORDPRESS_DB_NAME",
+          "default": "homeserver",
+          "description": "Nhập tên DATABASE"
         }
       ],
-      "name": "TQH-NextCloud-NAS",
-      "image": "lscr.io/linuxserver/nextcloud:latest",
+      "name": "TQH-WordPress",
+      "image": "wordpress",
       "network": "bridge",
       "restart_policy": "unless-stopped",
-      "hostname": "TQH-NextCloud-NAS",
       "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
       "platform": "linux",
       "ports": [
-        "1080:80/tcp",
-        "1443:443/tcp"
+        "1080:80/tcp"
       ],
-      "title": "TQH NextCloud NAS",
+      "title": "TQH WordPress",
       "type": 1,
       "volumes": [
         {
-          "container": "/config",
-          "bind": "TQH-NextCloud-NAS"
-
-        },
-        {
-          "container": "/data",
-          "bind": "TQH-NextCloud-NAS"
-
-        },
-        {
-          "container": "/srv",
-          "bind": "/srv"
+          "container": "/var/www/html",
+          "bind": "TQH-WordPress"
         }
       ]
     }
