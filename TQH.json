@@ -795,6 +795,54 @@
         "TQH Apps",
         "Tools"
       ],
+      "description": "The most advanced open-source database",
+      "env": [
+        {
+          "label": "POSTGRES USER",
+          "name": "POSTGRES_USER",
+          "default": "homeserver",
+          "description": "Tạo người dùng mới"
+        },
+        {
+          "label": "POSTGRES PASSWORD",
+          "name": "POSTGRES_PASSWORD",
+          "default": "Smart*home@TQH",
+          "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "POSTGRES DB",
+          "name": "POSTGRES_DB",
+          "default": "homeserver",
+          "description": "Tạo DATABASE mới"
+        }
+
+      ],
+      "name": "TQH-Postgres",
+      "image": "postgres",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+      "platform": "linux",
+      "ports": [
+        "5432:5432/tcp"
+      ],
+      "title": "TQH Postgres",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/postgresql/data",
+          "bind": "TQH-Postgres"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
       "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
       "env": [
         {
