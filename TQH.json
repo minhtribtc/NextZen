@@ -679,6 +679,12 @@
           "name": "MYSQL_ROOT_PASSWORD",
           "default": "Smart*home@TQH.vn",
           "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MYSQL DATABASE",
+          "name": "MYSQL_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo một DATABASE mới"
         }
       ],
       "name": "TQH-MySQL",
@@ -729,6 +735,12 @@
           "name": "MYSQL_ROOT_PASSWORD",
           "default": "Smart*home@TQH.vn",
           "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MARIADB DATABASE",
+          "name": "MYSQL_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo một DATABASE mới"
         }
       ],
       "name": "TQH-MariaDB",
@@ -764,6 +776,12 @@
           "name": "POSTGRES_PASSWORD",
           "default": "Smart*home@TQH",
           "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "POSTGRES DATABASE",
+          "name": "POSTGRES_DB",
+          "default": "homeserver",
+          "description": "Tạo một DATABASE mới"
         }
       ],
       "name": "TQH-Postgres",
@@ -859,16 +877,17 @@
         {
           "label": "DATABASE PASSWORD",
           "name": "WORDPRESS_DB_PASSWORD",
-          "default": "homeserver",
+          "default": "Smart*home@TQH.vn",
           "description": "Nhập DATABASE password"
         },
         {
           "label": "DATABASE NAME",
           "name": "WORDPRESS_DB_NAME",
+          "default": "homeserver",
           "description": "Nhập tên DATABASE"
         }
       ],
-      "name": "Nhập tên miền",
+      "name": "TQH-WordPress",
       "image": "wordpress",
       "network": "bridge",
       "restart_policy": "unless-stopped",
@@ -886,6 +905,6 @@
           "bind": "TQH-WordPress"
         }
       ]
-    }
+    },
   ]
 }
