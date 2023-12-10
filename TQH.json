@@ -664,6 +664,97 @@
           "bind": "/srv"
         }
       ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "The most popular open-source database",
+      "env": [
+        {
+          "label": "MYSQL ROOT PASSWORD",
+          "name": "MYSQL_ROOT_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập ROOT PASSWORD"
+        }
+      ],
+      "name": "TQH-MySQL",
+      "image": "mysql",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps\test",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+      "platform": "linux",
+      "ports": [
+        "3306:3306/tcp"
+      ],
+      "title": "TQH MySQL",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/mysql",
+          "bind": "TQH-MySQL"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-NextCloud-NAS",
+      "image": "lscr.io/linuxserver/nextcloud:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-NextCloud-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/radarr.png",
+      "platform": "linux",
+      "ports": [
+        "1080:80/tcp",
+        "1443:443/tcp"
+      ],
+      "title": "TQH NextCloud NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-NextCloud-NAS"
+
+        },
+        {
+          "container": "/data",
+          "bind": "TQH-NextCloud-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
     }
   ]
 }
