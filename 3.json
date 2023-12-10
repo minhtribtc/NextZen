@@ -87,17 +87,17 @@
       "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
       "env": [
         {
-          "label": "PUID",
+          "label": "User ID",
           "name": "PUID",
           "default": "1000"
         },
         {
-          "label": "PGID",
+          "label": "Group ID",
           "name": "PGID",
           "default": "100"
         },
         {
-          "label": "TZ",
+          "label": "Time Zone",
           "name": "TZ",
           "default": "Asia/Ho_Chi_Minh"
         }
@@ -188,7 +188,7 @@
         {
           "label": "DOMAIN",
           "name": "ZONE",
-          "description": "Nhập tên miền chính của bạn, ví dụ: TQH.vn"
+          "description": "Nhập tên miền chính, ví dụ: TQH.vn"
         },
         {
           "label": "SUBDOMAIN",
@@ -198,21 +198,15 @@
         {
           "label": "EMAIL",
           "name": "EMAIL",
-          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền của bạn"
+          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền"
         },
         {
           "label": "GLOBAL API KEY",
           "name": "API_KEY",
-          "description": "Nhập Cloudflare GLOBAL API KEY theo tài khoản của bạn"
+          "description": "Nhập Cloudflare GLOBAL API KEY theo tài khoản"
         }
       ],
-      "name": [
-        {
-          "label": "Tên miền đầy đủ",
-          "name": "ZONE",
-          "description": "Nhập tên miền chính của bạn, ví dụ: TQH.vn"
-        }
-      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
       "image": "oznu/cloudflare-ddns",
       "network": "bridge",
       "restart_policy": "unless-stopped",
@@ -221,6 +215,684 @@
       "platform": "linux",
       "title": "TQH Cloudflare DDNS",
       "type": 1
+    },
+    {
+      "categories": [
+        "Files",
+        "Network",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "[pyLoad](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Download-Manager-NAS",
+      "image": "lscr.io/linuxserver/pyload-ng:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Download-Manager-NAS",
+      "note": "TQH Apps",
+      "logo": "https://www.vhv.rs/dpng/d/468-4687893_transparent-green-button-png-download-favicon-ico-file.png",
+      "platform": "linux",
+      "ports": [
+        "8000:8000/tcp",
+        "9666:9666/tcp"
+      ],
+      "title": "TQH Download Manager NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Download-Manager-NAS"
+
+        },
+        {
+          "container": "/downloads",
+          "bind": "/srv/TQH/downloads"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Web",
+        "Cloud",
+        "TQH Apps",
+        "Network"
+      ],
+      "description": "[Chromium](https://www.chromium.org/chromium-projects/) is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "Homepage",
+          "name": "CHROME_CLI",
+          "default": "https://tqh.vn/"
+        }
+      ],
+      "name": "TQH-Chromium-NAS",
+      "image": "lscr.io/linuxserver/chromium:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Chromium-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/chromium-logo.png",
+      "platform": "linux",
+      "ports": [
+        "4000:3000/tcp",
+        "4001:3001/tcp"
+      ],
+      "title": "TQH Chromium NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Chromium-NAS"
+
+        },
+        {
+          "container": "/config/Downloads",
+          "bind": "/srv/TQH/downloads"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Web",
+        "Cloud",
+        "TQH Apps",
+        "Network"
+      ],
+      "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Firefox-NAS",
+      "image": "lscr.io/linuxserver/firefox:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Firefox-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp",
+        "3001:3001/tcp"
+      ],
+      "title": "TQH Firefox NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Firefox-NAS"
+
+        },
+        {
+          "container": "/config/Downloads",
+          "bind": "/srv/TQH/downloads"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Tools",
+        "TQH Apps",
+        "Other"
+      ],
+      "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-DashBoard",
+      "image": "lscr.io/linuxserver/heimdall:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-DashBoard",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/heimdall-icon.png",
+      "platform": "linux",
+      "title": "TQH DashBoard",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-DashBoard"
+
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Network",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence. First, go to duckdns site, register your subdomain and retrieve your token. Then run the docker create command above with your subdomain(s) and token. It will update your IP with the DuckDNS service every 5 minutes.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAINS",
+          "description": "Nhập tên miền phụ DuckDNS"
+        },
+        {
+          "label": "Duck DNS TOKEN",
+          "name": "TOKEN",
+          "description": "Nhập Duck DNS TOKEN"
+        },
+        {
+          "label": "UPDATE_IP",
+          "name": "UPDATE_IP",
+          "default": "ipv4",
+          "preset": true
+        },
+        {
+          "label": "LOG_FILE",
+          "name": "LOG_FILE",
+          "default": "false",
+          "preset": true
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
+      "image": "lscr.io/linuxserver/duckdns:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/duckdns.png",
+      "platform": "linux",
+      "title": "TQH Duck DNS",
+      "type": 1
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
+      "name": "TQH-Vaultwarden",
+      "image": "vaultwarden/server:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Vaultwarden",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
+      "platform": "linux",
+      "ports": [
+        "8680:80/tcp",
+        "8643:443/tcp"
+      ],
+      "title": "TQH Vaultwarden",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data",
+          "bind": "TQH-Vaultwarden"
+
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Radarr - A fork of Sonarr to work with movies \u00ef\u00bf\u00bd la Couchpotato.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Radarr-NAS",
+      "image": "lscr.io/linuxserver/radarr:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Radarr-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/radarr.png",
+      "platform": "linux",
+      "ports": [
+        "7878:7878/tcp"
+      ],
+      "title": "TQH Radarr NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Radarr-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Sonarr-NAS",
+      "image": "lscr.io/linuxserver/sonarr:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Sonarr-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/sonarr-icon.png",
+      "platform": "linux",
+      "ports": [
+        "8989:8989/tcp"
+      ],
+      "title": "TQH Sonarr NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Sonarr-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "JDownloader docker image",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-JDownloader-NAS",
+      "image": "jlesage/jdownloader-2:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-JDownloader-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/jdownloader.png",
+      "platform": "linux",
+      "ports": [
+        "5800:5800/tcp"
+      ],
+      "title": "TQH JDownloader NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-JDownloader-NAS"
+
+        },
+        {
+          "container": "/output",
+          "bind": "/srv/TQH/downloads"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "The most popular open-source database",
+      "env": [
+        {
+          "label": "MYSQL ROOT PASSWORD",
+          "name": "MYSQL_ROOT_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MYSQL USER",
+          "name": "MYSQL_USER",
+          "default": "homeserver",
+          "description": "Tạo người dùng mới"
+        },
+        {
+          "label": "MYSQL PASSWORD",
+          "name": "MYSQL_PASSWORD",
+          "default": "Smart*home@TQH",
+          "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "NEW MYSQL_DATABASE",
+          "name": "MYSQL_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo DATABASE mới"
+        }
+
+      ],
+      "name": "TQH-MySQL",
+      "image": "mysql",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+      "platform": "linux",
+      "ports": [
+        "3306:3306/tcp"
+      ],
+      "title": "TQH MySQL",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/mysql",
+          "bind": "TQH-MySQL"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "The most popular open-source database",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "MARIADB ROOT PASSWORD",
+          "name": "MYSQL_ROOT_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MARIADB USER",
+          "name": "MYSQL_USER",
+          "default": "homeserver",
+          "description": "Tạo người dùng mới"
+        },
+        {
+          "label": "MARIADB PASSWORD",
+          "name": "MYSQL_PASSWORD",
+          "default": "Smart*home@TQH",
+          "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "NEW MARIADB_DATABASE",
+          "name": "MYSQL_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo DATABASE mới"
+        }
+
+      ],
+      "name": "TQH-MariaDB",
+      "image": "lscr.io/linuxserver/mariadb:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps ",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/mariadb-icon.png",
+      "platform": "linux",
+      "ports": [
+        "3306:3306/tcp"
+      ],
+      "title": "TQH MariaDB",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-MariaDB"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "PMA_ARBITRARY",
+          "name": "PMA_ARBITRARY",
+          "default": "1"
+        }
+
+      ],
+      "name": "TQH-Phpmyadmin",
+      "image": "lscr.io/linuxserver/phpmyadmin:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+      "platform": "linux",
+      "ports": [
+        "2080:80/tcp"
+      ],
+      "title": "TQH Phpmyadmin",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Phpmyadmin"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-NextCloud-NAS",
+      "image": "lscr.io/linuxserver/nextcloud:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-NextCloud-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
+      "platform": "linux",
+      "ports": [
+        "1080:80/tcp",
+        "1443:443/tcp"
+      ],
+      "title": "TQH NextCloud NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-NextCloud-NAS"
+
+        },
+        {
+          "container": "/data",
+          "bind": "TQH-NextCloud-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
     }
   ]
 }
