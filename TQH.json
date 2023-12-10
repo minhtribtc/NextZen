@@ -381,6 +381,134 @@
           "bind": "/srv"
         }
       ]
+    },
+    {
+      "categories": [
+        "Tools",
+        "TQH Apps",
+        "Other"
+      ],
+      "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-DashBoard",
+      "image": "lscr.io/linuxserver/heimdall:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-DashBoard",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/heimdall-icon.png",
+      "platform": "linux",
+      "title": "TQH DashBoard",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-DashBoard"
+
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Network",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence. First, go to duckdns site, register your subdomain and retrieve your token. Then run the docker create command above with your subdomain(s) and token. It will update your IP with the DuckDNS service every 5 minutes.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAINS",
+          "description": "Nhập tên miền phụ DuckDNS"
+        },
+        {
+          "label": "Duck DNS TOKEN",
+          "name": "TOKEN",
+          "description": "Nhập Duck DNS TOKEN"
+        },
+        {
+          "label": "UPDATE_IP",
+          "name": "UPDATE_IP",
+          "default": "ipv4",
+          "preset": true
+        },
+        {
+          "label": "LOG_FILE",
+          "name": "LOG_FILE",
+          "default": "false",
+          "preset": true
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
+      "image": "lscr.io/linuxserver/duckdns:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/duckdns.png",
+      "platform": "linux",
+      "title": "TQH Duck DNS",
+      "type": 1
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
+      "name": "TQH-Vaultwarden",
+      "image": "vaultwarden/server:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Vaultwarden",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
+      "platform": "linux",
+      "ports": [
+        "8680:80/tcp",
+        "8643:443/tcp"
+      ],
+      "title": "TQH Vaultwarden",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data",
+          "bind": "TQH-Vaultwarden"
+
+        }
+      ]
     }
   ]
 }
