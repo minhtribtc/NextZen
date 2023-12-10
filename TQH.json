@@ -215,6 +215,57 @@
       "platform": "linux",
       "title": "TQH Cloudflare DDNS",
       "type": 1
+    },
+    {
+      "categories": [
+        "Files",
+        "Network",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "[pyLoad](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
+      "env": [
+        {
+          "label": "PUID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "PGID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "TZ",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Download-Manager-NAS",
+      "image": "lscr.io/linuxserver/pyload-ng:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Download-Manager-NAS",
+      "note": "TQH Apps",
+      "logo": "https://www.vhv.rs/dpng/d/468-4687893_transparent-green-button-png-download-favicon-ico-file.png",
+      "platform": "linux",
+      "ports": [
+        "8000:8000/tcp",
+        "9666:9666/tcp"
+      ],
+      "title": "TQH Download Manager NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Download-Manager-NAS"
+
+        },
+        {
+          "container": "/downloads",
+          "bind": "/srv/TQH/downloads"
+        }
+      ]
     }
   ]
 }
