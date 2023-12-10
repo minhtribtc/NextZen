@@ -845,23 +845,28 @@
       "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
       "env": [
         {
-          "label": "User ID",
-          "name": "PUID",
-          "default": "1000"
+          "label": "DOMAIN",
+          "name": "NEXTCLOUD_TRUSTED_DOMAINS",
+          "default": "*"
         },
         {
-          "label": "Group ID",
-          "name": "PGID",
-          "default": "100"
+          "label": "APACHE_DISABLE_REWRITE_IP",
+          "name": "APACHE_DISABLE_REWRITE_IP",
+          "default": "1"
         },
         {
-          "label": "Time Zone",
-          "name": "TZ",
-          "default": "Asia/Ho_Chi_Minh"
+          "label": "TRUSTED_PROXIES",
+          "name": "TRUSTED_PROXIES",
+          "default": "*"
+        },
+        {
+          "label": "OVERWRITEPROTOCOL",
+          "name": "OVERWRITEPROTOCOL",
+          "default": "https"
         }
       ],
       "name": "TQH-NextCloud-NAS",
-      "image": "lscr.io/linuxserver/nextcloud:latest",
+      "image": "nextcloud",
       "network": "bridge",
       "restart_policy": "unless-stopped",
       "hostname": "TQH-NextCloud-NAS",
@@ -876,13 +881,13 @@
       "type": 1,
       "volumes": [
         {
-          "container": "/config",
+          "container": "/var/www/html",
           "bind": "TQH-NextCloud-NAS"
 
         },
         {
-          "container": "/data",
-          "bind": "TQH-NextCloud-NAS"
+          "container": "/var/www/html/data",
+          "bind": "TQH-NextCloud-data"
 
         },
         {
