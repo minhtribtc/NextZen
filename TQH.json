@@ -679,13 +679,32 @@
           "name": "MYSQL_ROOT_PASSWORD",
           "default": "Smart*home@TQH.vn",
           "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MYSQL USER",
+          "name": "MYSQL_USER",
+          "default": "homeserver",
+          "description": "Tạo người dùng mới"
+        },
+        {
+          "label": "MYSQL PASSWORD",
+          "name": "MYSQL_PASSWORD",
+          "default": "Smart*home@TQH",
+          "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "NEW MYSQL_DATABASE",
+          "name": "MYSQL_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo DATABASE mới"
         }
+
       ],
       "name": "TQH-MySQL",
       "image": "mysql",
       "network": "bridge",
       "restart_policy": "unless-stopped",
-      "note": "TQH Apps\test",
+      "note": "TQH Apps / test",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
       "platform": "linux",
       "ports": [
