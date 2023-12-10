@@ -726,6 +726,61 @@
         "TQH Apps",
         "Tools"
       ],
+      "description": "The most popular open-source database",
+      "env": [
+        {
+          "label": "MARIADB ROOT PASSWORD",
+          "name": "MARIADB_ROOT_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MARIADB USER",
+          "name": "MARIADB_USER",
+          "default": "homeserver",
+          "description": "Tạo người dùng mới"
+        },
+        {
+          "label": "MARIADB PASSWORD",
+          "name": "MARIADB_PASSWORD",
+          "default": "Smart*home@TQH",
+          "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "NEW MARIADB_DATABASE",
+          "name": "MARIADB_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo DATABASE mới"
+        }
+
+      ],
+      "name": "TQH-MARIADB",
+      "image": "mariadb",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps
+test",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/mariadb-icon.png",
+      "platform": "linux",
+      "ports": [
+        "3306:3306/tcp"
+      ],
+      "title": "TQH MARIADB",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/MARIADB",
+          "bind": "TQH-MARIADB"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
       "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
       "env": [
         {
