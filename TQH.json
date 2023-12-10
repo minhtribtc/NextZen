@@ -869,7 +869,7 @@
       "restart_policy": "unless-stopped",
       "hostname": "TQH-NextCloud-NAS",
       "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/nextcloud-icon.png",
       "platform": "linux",
       "ports": [
         "1080:80/tcp",
