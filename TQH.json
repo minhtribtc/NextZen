@@ -704,7 +704,7 @@
       "image": "mysql",
       "network": "bridge",
       "restart_policy": "unless-stopped",
-      "note": "TQH Apps / test",
+      "note": "TQH Apps",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
       "platform": "linux",
       "ports": [
@@ -754,22 +754,72 @@
         }
 
       ],
-      "name": "TQH-MARIADB",
+      "name": "TQH-MariaDB",
       "image": "mariadb",
       "network": "bridge",
       "restart_policy": "unless-stopped",
-      "note": "TQH Apps \ test",
+      "note": "TQH Apps ",
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/mariadb-icon.png",
       "platform": "linux",
       "ports": [
         "3306:3306/tcp"
       ],
-      "title": "TQH MARIADB",
+      "title": "TQH-MariaDB",
       "type": 1,
       "volumes": [
         {
-          "container": "/var/lib/MARIADB",
-          "bind": "TQH-MARIADB"
+          "container": "/var/lib/mariadb",
+          "bind": "TQH-MariaDB"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "PMA_ARBITRARY",
+          "name": "PMA_ARBITRARY",
+          "default": "1"
+        }
+
+      ],
+      "name": "TQH-Phpmyadmin",
+      "image": "lscr.io/linuxserver/phpmyadmin:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+      "platform": "linux",
+      "ports": [
+        "2080:80/tcp"
+      ],
+      "title": "TQH Phpmyadmin",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Phpmyadmin"
         }
       ]
     },
