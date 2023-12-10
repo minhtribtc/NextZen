@@ -758,8 +758,7 @@
       "image": "mariadb",
       "network": "bridge",
       "restart_policy": "unless-stopped",
-      "note": "TQH Apps
-test",
+      "note": "TQH Apps \ test",
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/mariadb-icon.png",
       "platform": "linux",
       "ports": [
