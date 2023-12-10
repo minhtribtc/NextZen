@@ -87,17 +87,17 @@
       "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
       "env": [
         {
-          "label": "PUID",
+          "label": "User ID",
           "name": "PUID",
           "default": "1000"
         },
         {
-          "label": "PGID",
+          "label": "Group ID",
           "name": "PGID",
           "default": "100"
         },
         {
-          "label": "TZ",
+          "label": "Time Zone",
           "name": "TZ",
           "default": "Asia/Ho_Chi_Minh"
         }
@@ -226,17 +226,17 @@
       "description": "[pyLoad](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
       "env": [
         {
-          "label": "PUID",
+          "label": "User ID",
           "name": "PUID",
           "default": "1000"
         },
         {
-          "label": "PGID",
+          "label": "Group ID",
           "name": "PGID",
           "default": "100"
         },
         {
-          "label": "TZ",
+          "label": "Time Zone",
           "name": "TZ",
           "default": "Asia/Ho_Chi_Minh"
         }
@@ -264,6 +264,121 @@
         {
           "container": "/downloads",
           "bind": "/srv/TQH/downloads"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Web",
+        "Cloud",
+        "TQH Apps",
+        "Network"
+      ],
+      "description": "[Chromium](https://www.chromium.org/chromium-projects/) is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "Homepage",
+          "name": "CHROME_CLI",
+          "default": "https://tqh.vn/"
+        }
+      ],
+      "name": "TQH-Chromium-NAS",
+      "image": "lscr.io/linuxserver/chromium:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Chromium-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/chromium-logo.png",
+      "platform": "linux",
+      "ports": [
+        "4000:3000/tcp",
+        "4001:3001/tcp"
+      ],
+      "title": "TQH Chromium NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Chromium-NAS"
+
+        },
+        {
+          "container": "/config/Downloads",
+          "bind": "/srv/TQH/downloads"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Web",
+        "Cloud",
+        "TQH Apps",
+        "Network"
+      ],
+      "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Firefox-NAS",
+      "image": "lscr.io/linuxserver/firefox:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Firefox-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp",
+        "3001:3001/tcp"
+      ],
+      "title": "TQH Firefox NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Firefox-NAS"
+
+        },
+        {
+          "container": "/config/Downloads",
+          "bind": "/srv/TQH/downloads"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
         }
       ]
     }
