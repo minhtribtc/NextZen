@@ -509,6 +509,155 @@
 
         }
       ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Radarr - A fork of Sonarr to work with movies \u00ef\u00bf\u00bd la Couchpotato.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Radarr-NAS",
+      "image": "lscr.io/linuxserver/radarr:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Radarr-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/radarr.png",
+      "platform": "linux",
+      "ports": [
+        "7878:7878/tcp"
+      ],
+      "title": "TQH Radarr NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Radarr-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Sonarr-NAS",
+      "image": "lscr.io/linuxserver/sonarr:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Sonarr-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/radarr.png",
+      "platform": "linux",
+      "ports": [
+        "8989:8989/tcp"
+      ],
+      "title": "TQH Sonarr NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Sonarr-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Backup",
+        "Cloud",
+        "TQH Apps",
+        "Tools"
+      ],
+      "description": "JDownloader docker image",
+      "env": [
+        {
+          "default": "",
+          "label": "MYJD_DEVICE_NAME",
+          "name": "MYJD_DEVICE_NAME"
+        },
+        {
+          "default": "",
+          "label": "MYJD_USER",
+          "name": "MYJD_USER"
+        },
+        {
+          "default": "",
+          "label": "MYJD_PASSWORD",
+          "name": "MYJD_PASSWORD"
+        }
+      ],
+      "name": "TQH-JDownloader-NAS",
+      "image": "jaymoulin/jdownloader:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-JDownloader-NAS",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/jdownloader.png",
+      "platform": "linux",
+      "ports": [
+        "3129:3129/tcp"
+      ],
+      "title": "TQH JDownloader NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "TQH-JDownloader-NAS",
+          "container": "/opt/JDownloader/app/cfg"
+        },
+        {
+          "bind": "/srv/TQH/downloads",
+          "container": "/opt/JDownloader/Downloads"
+        }
+      ]
     }
   ]
 }
