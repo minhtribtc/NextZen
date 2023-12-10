@@ -184,14 +184,37 @@
         "Tools"
       ],
       "description": "Cloudflare DDNS - A small and fast DDNS updater for Cloudflare.",
+      "env": [
+        {
+          "label": "DOMAIN",
+          "name": "ZONE",
+          "description": "Nhập tên miền chính, ví dụ: TQH.vn"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAIN",
+          "description": "Nhập tên miền phụ nếu có, ví dụ: CLOUD.TQH.vn thì chỉ nhập duy nhất CLOUD"
+        },
+        {
+          "label": "EMAIL",
+          "name": "EMAIL",
+          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền"
+        },
+        {
+          "label": "GLOBAL API KEY",
+          "name": "API_KEY",
+          "description": "Nhập Cloudflare GLOBAL API KEY theo tài khoản"
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
       "image": "oznu/cloudflare-ddns",
       "network": "bridge",
       "restart_policy": "unless-stopped",
       "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/cloudflare-ddns.png",
+      "logo": "https://cdn.icon-icons.com/icons2/2699/PNG/512/cloudflare_logo_icon_170372.png",
       "platform": "linux",
       "title": "TQH Cloudflare DDNS",
-      "type": 1,
+      "type": 1
     }
   ]
 }
