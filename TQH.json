@@ -591,7 +591,7 @@
       "restart_policy": "unless-stopped",
       "hostname": "TQH-Sonarr-NAS",
       "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/radarr.png",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/sonarr-icon.png",
       "platform": "linux",
       "ports": [
         "8989:8989/tcp"
@@ -620,23 +620,23 @@
       "description": "JDownloader docker image",
       "env": [
         {
-          "default": "",
-          "label": "MYJD_DEVICE_NAME",
-          "name": "MYJD_DEVICE_NAME"
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
         },
         {
-          "default": "",
-          "label": "MYJD_USER",
-          "name": "MYJD_USER"
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
         },
         {
-          "default": "",
-          "label": "MYJD_PASSWORD",
-          "name": "MYJD_PASSWORD"
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
         }
       ],
       "name": "TQH-JDownloader-NAS",
-      "image": "jaymoulin/jdownloader:latest",
+      "image": "jlesage/jdownloader-2:latest",
       "network": "bridge",
       "restart_policy": "unless-stopped",
       "hostname": "TQH-JDownloader-NAS",
@@ -644,18 +644,24 @@
       "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/jdownloader.png",
       "platform": "linux",
       "ports": [
-        "3129:3129/tcp"
+        "5800:5800/tcp"
       ],
       "title": "TQH JDownloader NAS",
       "type": 1,
       "volumes": [
         {
-          "bind": "TQH-JDownloader-NAS",
-          "container": "/opt/JDownloader/app/cfg"
+          "container": "/config",
+          "bind": "TQH-JDownloader-NAS"
+
         },
         {
-          "bind": "/srv/TQH/downloads",
-          "container": "/opt/JDownloader/Downloads"
+          "container": "/output",
+          "bind": "/srv/TQH/downloads"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
         }
       ]
     }
