@@ -729,33 +729,48 @@
       "description": "The most popular open-source database",
       "env": [
         {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
           "label": "MARIADB ROOT PASSWORD",
-          "name": "MARIADB_ROOT_PASSWORD",
+          "name": "MYSQL_ROOT_PASSWORD",
           "default": "Smart*home@TQH.vn",
           "description": "Nhập ROOT PASSWORD"
         },
         {
           "label": "MARIADB USER",
-          "name": "MARIADB_USER",
+          "name": "MYSQL_USER",
           "default": "homeserver",
           "description": "Tạo người dùng mới"
         },
         {
           "label": "MARIADB PASSWORD",
-          "name": "MARIADB_PASSWORD",
+          "name": "MYSQL_PASSWORD",
           "default": "Smart*home@TQH",
           "description": "Tạo mật khẩu người dùng mới"
         },
         {
           "label": "NEW MARIADB_DATABASE",
-          "name": "MARIADB_DATABASE",
+          "name": "MYSQL_DATABASE",
           "default": "homeserver",
           "description": "Tạo DATABASE mới"
         }
 
       ],
       "name": "TQH-MariaDB",
-      "image": "mariadb",
+      "image": "lscr.io/linuxserver/mariadb:latest",
       "network": "bridge",
       "restart_policy": "unless-stopped",
       "note": "TQH Apps ",
@@ -764,11 +779,11 @@
       "ports": [
         "3306:3306/tcp"
       ],
-      "title": "TQH-MariaDB",
+      "title": "TQH MariaDB",
       "type": 1,
       "volumes": [
         {
-          "container": "/var/lib/mariadb",
+          "container": "/config",
           "bind": "TQH-MariaDB"
         }
       ]
@@ -830,7 +845,7 @@
         "TQH Apps",
         "Tools"
       ],
-      "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+      "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
       "env": [
         {
           "label": "User ID",
@@ -854,7 +869,7 @@
       "restart_policy": "unless-stopped",
       "hostname": "TQH-NextCloud-NAS",
       "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/radarr.png",
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
       "platform": "linux",
       "ports": [
         "1080:80/tcp",
