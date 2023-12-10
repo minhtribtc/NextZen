@@ -679,26 +679,7 @@
           "name": "MYSQL_ROOT_PASSWORD",
           "default": "Smart*home@TQH.vn",
           "description": "Nhập ROOT PASSWORD"
-        },
-        {
-          "label": "MYSQL USER",
-          "name": "MYSQL_USER",
-          "default": "homeserver",
-          "description": "Tạo người dùng mới"
-        },
-        {
-          "label": "MYSQL PASSWORD",
-          "name": "MYSQL_PASSWORD",
-          "default": "Smart*home@TQH",
-          "description": "Tạo mật khẩu người dùng mới"
-        },
-        {
-          "label": "NEW MYSQL_DATABASE",
-          "name": "MYSQL_DATABASE",
-          "default": "homeserver",
-          "description": "Tạo DATABASE mới"
         }
-
       ],
       "name": "TQH-MySQL",
       "image": "mysql",
@@ -748,26 +729,7 @@
           "name": "MYSQL_ROOT_PASSWORD",
           "default": "Smart*home@TQH.vn",
           "description": "Nhập ROOT PASSWORD"
-        },
-        {
-          "label": "MARIADB USER",
-          "name": "MYSQL_USER",
-          "default": "homeserver",
-          "description": "Tạo người dùng mới"
-        },
-        {
-          "label": "MARIADB PASSWORD",
-          "name": "MYSQL_PASSWORD",
-          "default": "Smart*home@TQH",
-          "description": "Tạo mật khẩu người dùng mới"
-        },
-        {
-          "label": "NEW MARIADB_DATABASE",
-          "name": "MYSQL_DATABASE",
-          "default": "homeserver",
-          "description": "Tạo DATABASE mới"
         }
-
       ],
       "name": "TQH-MariaDB",
       "image": "lscr.io/linuxserver/mariadb:latest",
@@ -798,24 +760,11 @@
       "description": "The most advanced open-source database",
       "env": [
         {
-          "label": "POSTGRES USER",
-          "name": "POSTGRES_USER",
-          "default": "homeserver",
-          "description": "Tạo người dùng mới"
-        },
-        {
           "label": "POSTGRES PASSWORD",
           "name": "POSTGRES_PASSWORD",
           "default": "Smart*home@TQH",
           "description": "Tạo mật khẩu người dùng mới"
-        },
-        {
-          "label": "POSTGRES DB",
-          "name": "POSTGRES_DB",
-          "default": "homeserver",
-          "description": "Tạo DATABASE mới"
         }
-
       ],
       "name": "TQH-Postgres",
       "image": "postgres",
