@@ -716,35 +716,20 @@
       "description": "The most popular open-source database",
       "env": [
         {
-          "label": "User ID",
-          "name": "PUID",
-          "default": "1000"
-        },
-        {
-          "label": "Group ID",
-          "name": "PGID",
-          "default": "100"
-        },
-        {
-          "label": "Time Zone",
-          "name": "TZ",
-          "default": "Asia/Ho_Chi_Minh"
-        },
-        {
           "label": "MARIADB ROOT PASSWORD",
-          "name": "MYSQL_ROOT_PASSWORD",
+          "name": "MARIADB_ROOT_PASSWORD",
           "default": "Smart*home@TQH.vn",
           "description": "Nhập ROOT PASSWORD"
         },
         {
           "label": "MARIADB DATABASE",
-          "name": "MYSQL_DATABASE",
+          "name": "MARIADB_DATABASE",
           "default": "homeserver",
           "description": "Tạo một DATABASE mới"
         }
       ],
       "name": "TQH-MariaDB",
-      "image": "lscr.io/linuxserver/mariadb:latest",
+      "image": "mariadb",
       "network": "bridge",
       "restart_policy": "unless-stopped",
       "note": "TQH Apps ",
@@ -757,7 +742,7 @@
       "type": 1,
       "volumes": [
         {
-          "container": "/config",
+          "container": "/var/lib/mysql",
           "bind": "TQH-MariaDB"
         }
       ]
