@@ -3,10 +3,45 @@
   "templates": [
     {
       "categories": [
+        "TQH Apps"
+      ],
+      "description": "Cloudflare DDNS - A small and fast DDNS updater for Cloudflare.",
+      "env": [
+        {
+          "label": "DOMAIN",
+          "name": "ZONE",
+          "description": "Nhập tên miền chính, ví dụ: TQH.vn"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAIN",
+          "description": "Nhập tên miền phụ nếu có, ví dụ: CLOUD.TQH.vn thì chỉ nhập duy nhất CLOUD"
+        },
+        {
+          "label": "EMAIL",
+          "name": "EMAIL",
+          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền"
+        },
+        {
+          "label": "GLOBAL API KEY",
+          "name": "API_KEY",
+          "description": "Nhập Cloudflare GLOBAL API KEY theo tài khoản"
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
+      "image": "oznu/cloudflare-ddns",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://cdn.icon-icons.com/icons2/2699/PNG/512/cloudflare_logo_icon_170372.png",
+      "platform": "linux",
+      "title": "TQH Cloudflare DDNS",
+      "type": 1
+    },
+    {
+      "categories": [
         "TQH Apps",
-        "Cloud",
-        "Web",
-        "Photos"
+        "TQH NAS"
       ],
       "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
       "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/nextcloud-icon.png",
@@ -23,9 +58,7 @@
     {
       "categories": [
         "TQH Apps",
-        "Video",
-        "Music",
-        "Photos"
+        "TQH NAS"
       ],
       "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
       "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/jellyfin.png",
@@ -42,9 +75,7 @@
     {
       "categories": [
         "TQH Apps",
-        "Video",
-        "Music",
-        "Photos"
+        "TQH NAS"
       ],
       "description": "Plex organizes your video, music, and photo collections and streams them to all of your screens.",
       "logo": "https://mediadepot.github.io/templates/img/plex-icon.png",
@@ -61,9 +92,7 @@
     {
       "categories": [
         "TQH Apps",
-        "Video",
-        "Music",
-        "Photos"
+        "TQH NAS"
       ],
       "description": "Emby organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
       "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/emby.png",
@@ -79,10 +108,8 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
         "TQH Apps",
-        "Tools"
+        "TQH NAS"
       ],
       "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
       "env": [
@@ -135,9 +162,7 @@
     },
     {
       "categories": [
-        "Network",
-        "TQH Apps",
-        "Tools"
+        "TQH Apps"
       ],
       "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it\u2019ll cover ALL your home devices, and you don\u2019t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
       "name": "TQH-AdguardHome",
@@ -179,49 +204,8 @@
     },
     {
       "categories": [
-        "Network",
         "TQH Apps",
-        "Tools"
-      ],
-      "description": "Cloudflare DDNS - A small and fast DDNS updater for Cloudflare.",
-      "env": [
-        {
-          "label": "DOMAIN",
-          "name": "ZONE",
-          "description": "Nhập tên miền chính, ví dụ: TQH.vn"
-        },
-        {
-          "label": "SUBDOMAIN",
-          "name": "SUBDOMAIN",
-          "description": "Nhập tên miền phụ nếu có, ví dụ: CLOUD.TQH.vn thì chỉ nhập duy nhất CLOUD"
-        },
-        {
-          "label": "EMAIL",
-          "name": "EMAIL",
-          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền"
-        },
-        {
-          "label": "GLOBAL API KEY",
-          "name": "API_KEY",
-          "description": "Nhập Cloudflare GLOBAL API KEY theo tài khoản"
-        }
-      ],
-      "name": "Nhập đầy đủ tên miền tại đây",
-      "image": "oznu/cloudflare-ddns",
-      "network": "bridge",
-      "restart_policy": "unless-stopped",
-      "note": "TQH Apps",
-      "logo": "https://cdn.icon-icons.com/icons2/2699/PNG/512/cloudflare_logo_icon_170372.png",
-      "platform": "linux",
-      "title": "TQH Cloudflare DDNS",
-      "type": 1
-    },
-    {
-      "categories": [
-        "Files",
-        "Network",
-        "TQH Apps",
-        "Tools"
+        "TQH NAS"
       ],
       "description": "[pyLoad](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
       "env": [
@@ -269,10 +253,8 @@
     },
     {
       "categories": [
-        "Web",
-        "Cloud",
         "TQH Apps",
-        "Network"
+        "TQH NAS"
       ],
       "description": "[Chromium](https://www.chromium.org/chromium-projects/) is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
       "env": [
@@ -329,10 +311,8 @@
     },
     {
       "categories": [
-        "Web",
-        "Cloud",
         "TQH Apps",
-        "Network"
+        "TQH NAS"
       ],
       "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
       "env": [
@@ -384,9 +364,7 @@
     },
     {
       "categories": [
-        "Tools",
-        "TQH Apps",
-        "Other"
+        "TQH Apps"
       ],
       "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
       "env": [
@@ -426,10 +404,7 @@
     },
     {
       "categories": [
-        "Network",
-        "TQH Apps",
-        "Tools"
-      ],
+        "TQH Apps"      ],
       "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence. First, go to duckdns site, register your subdomain and retrieve your token. Then run the docker create command above with your subdomain(s) and token. It will update your IP with the DuckDNS service every 5 minutes.",
       "env": [
         {
@@ -482,10 +457,7 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
-        "TQH Apps",
-        "Tools"
+        "TQH Apps"
       ],
       "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
       "name": "TQH-Vaultwarden",
@@ -512,10 +484,8 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
         "TQH Apps",
-        "Tools"
+        "TQH NAS"
       ],
       "description": "Radarr - A fork of Sonarr to work with movies \u00ef\u00bf\u00bd la Couchpotato.",
       "env": [
@@ -562,10 +532,8 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
         "TQH Apps",
-        "Tools"
+        "TQH NAS"
       ],
       "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
       "env": [
@@ -612,10 +580,8 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
         "TQH Apps",
-        "Tools"
+        "TQH NAS"
       ],
       "description": "JDownloader docker image",
       "env": [
@@ -667,10 +633,7 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
-        "TQH Apps",
-        "Tools"
+        "TQH Apps"
       ],
       "description": "The most popular open-source database",
       "env": [
@@ -708,10 +671,7 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
-        "TQH Apps",
-        "Tools"
+        "TQH Apps"
       ],
       "description": "The most popular open-source database",
       "env": [
@@ -749,10 +709,7 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
-        "TQH Apps",
-        "Tools"
+        "TQH Apps"
       ],
       "description": "The most advanced open-source database",
       "env": [
@@ -790,10 +747,7 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
-        "TQH Apps",
-        "Tools"
+        "TQH Apps"
       ],
       "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
       "env": [
@@ -840,10 +794,7 @@
     },
     {
       "categories": [
-        "Backup",
-        "Cloud",
-        "TQH Apps",
-        "Tools"
+        "TQH Apps"
       ],
       "description": "WordPress setup with a MySQL database",
       "env": [
