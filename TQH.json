@@ -162,48 +162,6 @@
     },
     {
       "categories": [
-        "TQH Apps"
-      ],
-      "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it\u2019ll cover ALL your home devices, and you don\u2019t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
-      "name": "TQH-AdguardHome",
-      "image": "adguard/adguardhome:latest",
-      "network": "bridge",
-      "restart_policy": "unless-stopped",
-      "hostname": "TQH-AdguardHome",
-      "note": "TQH Apps",
-      "logo": "https://static-00.iconduck.com/assets.00/adguard-home-icon-507x512-ovjn0dm6.png",
-      "platform": "linux",
-      "ports": [
-        "53:53/tcp",
-        "53:53/udp",
-        "67:67/udp",
-        "68:68/udp",
-        "80:80/tcp",
-        "443:443/tcp",
-        "443:443/udp",
-        "3000:3000/tcp",
-        "853:853/tcp",
-        "853:853/udp",
-        "5443:5443/udp",
-        "5443:5443/tcp",
-        "6060:6060/tcp"
-      ],
-      "title": "TQH AdGuard Home",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/opt/adguardhome/work",
-          "bind": "TQH-AdguardHome"
-
-        },
-        {
-          "container": "/opt/adguardhome/conf",
-          "bind": "TQH-AdguardHome"
-        }
-      ]
-    },
-    {
-      "categories": [
         "TQH Apps",
         "TQH NAS"
       ],
@@ -364,126 +322,6 @@
     },
     {
       "categories": [
-        "TQH Apps"
-      ],
-      "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
-      "env": [
-        {
-          "label": "User ID",
-          "name": "PUID",
-          "default": "1000"
-        },
-        {
-          "label": "Group ID",
-          "name": "PGID",
-          "default": "100"
-        },
-        {
-          "label": "Time Zone",
-          "name": "TZ",
-          "default": "Asia/Ho_Chi_Minh"
-        }
-      ],
-      "name": "TQH-DashBoard",
-      "image": "lscr.io/linuxserver/heimdall:latest",
-      "network": "bridge",
-      "restart_policy": "unless-stopped",
-      "hostname": "TQH-DashBoard",
-      "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/heimdall-icon.png",
-      "platform": "linux",
-      "title": "TQH DashBoard",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "TQH-DashBoard"
-
-        }
-      ]
-    },
-    {
-      "categories": [
-        "TQH Apps"      ],
-      "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence. First, go to duckdns site, register your subdomain and retrieve your token. Then run the docker create command above with your subdomain(s) and token. It will update your IP with the DuckDNS service every 5 minutes.",
-      "env": [
-        {
-          "label": "User ID",
-          "name": "PUID",
-          "default": "1000"
-        },
-        {
-          "label": "Group ID",
-          "name": "PGID",
-          "default": "100"
-        },
-        {
-          "label": "Time Zone",
-          "name": "TZ",
-          "default": "Asia/Ho_Chi_Minh"
-        },
-        {
-          "label": "SUBDOMAIN",
-          "name": "SUBDOMAINS",
-          "description": "Nhập tên miền phụ DuckDNS"
-        },
-        {
-          "label": "Duck DNS TOKEN",
-          "name": "TOKEN",
-          "description": "Nhập Duck DNS TOKEN"
-        },
-        {
-          "label": "UPDATE_IP",
-          "name": "UPDATE_IP",
-          "default": "ipv4",
-          "preset": true
-        },
-        {
-          "label": "LOG_FILE",
-          "name": "LOG_FILE",
-          "default": "false",
-          "preset": true
-        }
-      ],
-      "name": "Nhập đầy đủ tên miền tại đây",
-      "image": "lscr.io/linuxserver/duckdns:latest",
-      "network": "bridge",
-      "restart_policy": "unless-stopped",
-      "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/duckdns.png",
-      "platform": "linux",
-      "title": "TQH Duck DNS",
-      "type": 1
-    },
-    {
-      "categories": [
-        "TQH Apps"
-      ],
-      "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
-      "name": "TQH-Vaultwarden",
-      "image": "vaultwarden/server:latest",
-      "network": "bridge",
-      "restart_policy": "unless-stopped",
-      "hostname": "TQH-Vaultwarden",
-      "note": "TQH Apps",
-      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
-      "platform": "linux",
-      "ports": [
-        "8680:80/tcp",
-        "8643:443/tcp"
-      ],
-      "title": "TQH Vaultwarden",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/data",
-          "bind": "TQH-Vaultwarden"
-
-        }
-      ]
-    },
-    {
-      "categories": [
         "TQH Apps",
         "TQH NAS"
       ],
@@ -628,6 +466,168 @@
         {
           "container": "/srv",
           "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it\u2019ll cover ALL your home devices, and you don\u2019t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
+      "name": "TQH-AdguardHome",
+      "image": "adguard/adguardhome:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-AdguardHome",
+      "note": "TQH Apps",
+      "logo": "https://static-00.iconduck.com/assets.00/adguard-home-icon-507x512-ovjn0dm6.png",
+      "platform": "linux",
+      "ports": [
+        "53:53/tcp",
+        "53:53/udp",
+        "67:67/udp",
+        "68:68/udp",
+        "80:80/tcp",
+        "443:443/tcp",
+        "443:443/udp",
+        "3000:3000/tcp",
+        "853:853/tcp",
+        "853:853/udp",
+        "5443:5443/udp",
+        "5443:5443/tcp",
+        "6060:6060/tcp"
+      ],
+      "title": "TQH AdGuard Home",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/opt/adguardhome/work",
+          "bind": "TQH-AdguardHome"
+
+        },
+        {
+          "container": "/opt/adguardhome/conf",
+          "bind": "TQH-AdguardHome"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-DashBoard",
+      "image": "lscr.io/linuxserver/heimdall:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-DashBoard",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/heimdall-icon.png",
+      "platform": "linux",
+      "title": "TQH DashBoard",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-DashBoard"
+
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"      ],
+      "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence. First, go to duckdns site, register your subdomain and retrieve your token. Then run the docker create command above with your subdomain(s) and token. It will update your IP with the DuckDNS service every 5 minutes.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAINS",
+          "description": "Nhập tên miền phụ DuckDNS"
+        },
+        {
+          "label": "Duck DNS TOKEN",
+          "name": "TOKEN",
+          "description": "Nhập Duck DNS TOKEN"
+        },
+        {
+          "label": "UPDATE_IP",
+          "name": "UPDATE_IP",
+          "default": "ipv4",
+          "preset": true
+        },
+        {
+          "label": "LOG_FILE",
+          "name": "LOG_FILE",
+          "default": "false",
+          "preset": true
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
+      "image": "lscr.io/linuxserver/duckdns:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/duckdns.png",
+      "platform": "linux",
+      "title": "TQH Duck DNS",
+      "type": 1
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
+      "name": "TQH-Vaultwarden",
+      "image": "vaultwarden/server:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Vaultwarden",
+      "note": "TQH Apps",
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
+      "platform": "linux",
+      "ports": [
+        "8680:80/tcp",
+        "8643:443/tcp"
+      ],
+      "title": "TQH Vaultwarden",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data",
+          "bind": "TQH-Vaultwarden"
+
         }
       ]
     },
