@@ -80,4 +80,4 @@ else
     
 fi
 
-rm update.sh
+rm update-nas.sh
