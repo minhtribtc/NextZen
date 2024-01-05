@@ -44,23 +44,6 @@
         "NextZen NAS"
       ],
       "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
-      "logo": "https://raw.githubusercontent.com/minhtribtc/NextZen/main/icons/nextcloud-aio.png",
-      "name": "NextZen-Nextcloud-AIO-NAS",
-      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.NextZen.vn' target='_blank'>NextZen-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "NextZen-Apps/nextcloudaio.yml",
-        "url": "https://github.com/minhtribtc/NextZen"
-      },
-      "title": "NextZen Nextcloud AIO NAS",
-      "type": 3
-    },
-    {
-      "categories": [
-        "NextZen Apps",
-        "NextZen NAS"
-      ],
-      "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
       "env": [
         {
           "label": "CLOUD FOLDER",
@@ -87,6 +70,23 @@
           "description": "Nhập Port sử dụng cho Nextcloud talk, mặc định: 58743"
         }
       ],
+      "logo": "https://raw.githubusercontent.com/minhtribtc/NextZen/main/icons/nextcloud-aio.png",
+      "name": "NextZen-Nextcloud-AIO-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.NextZen.vn' target='_blank'>NextZen-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "NextZen-Apps/nextcloudaio.yml",
+        "url": "https://github.com/minhtribtc/NextZen"
+      },
+      "title": "NextZen Nextcloud AIO NAS",
+      "type": 3
+    },
+    {
+      "categories": [
+        "NextZen Apps",
+        "NextZen NAS"
+      ],
+      "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
       "logo": "https://appslist.heimdall.site/icons/jellyfin.svg",
       "name": "NextZen-Jellyfin-NAS",
       "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.NextZen.vn' target='_blank'>NextZen-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
