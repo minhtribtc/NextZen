@@ -1,0 +1,24 @@
+#cài đặt plex có igpu
+---
+version: "2.1"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: TQH-plex
+    network_mode: host
+    hostname: TQH-Plex
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Asia/Ho_Chi_Minh
+      - VERSION=docker
+      - PLEX_CLAIM= #nhập plex claim token của bạn
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - plex:/config
+      - /srv:/srv
+    restart: unless-stopped
+volumes:
+  plex:
+
