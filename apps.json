@@ -1,0 +1,920 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "Cloudflare DDNS - A small and fast DDNS updater for Cloudflare.",
+      "env": [
+        {
+          "label": "DOMAIN",
+          "name": "ZONE",
+          "description": "Nhập tên miền chính, ví dụ: TQH.vn"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAIN",
+          "description": "Nhập tên miền phụ nếu có, ví dụ: CLOUD.TQH.vn thì chỉ nhập duy nhất CLOUD"
+        },
+        {
+          "label": "EMAIL",
+          "name": "EMAIL",
+          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền"
+        },
+        {
+          "label": "GLOBAL API KEY",
+          "name": "API_KEY",
+          "description": "Nhập Cloudflare GLOBAL API KEY theo tài khoản"
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
+      "image": "oznu/cloudflare-ddns",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://tqh.cstsoft.net/icons/cloudflare.svg",
+      "platform": "linux",
+      "title": "TQH Cloudflare DDNS",
+      "type": 1
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
+      "logo": "https://tqh.cstsoft.net/icons/nextcloud-aio.png",
+      "name": "TQH-Nextcloud-AIO-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "TQH-Apps/nextcloudaio.yml",
+        "url": "https://github.com/minhtribtc/TQH-HomeServer"
+      },
+      "title": "TQH Nextcloud AIO NAS",
+      "type": 3
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
+      "logo": "https://appslist.heimdall.site/icons/jellyfin.svg",
+      "name": "TQH-Jellyfin-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "TQH-Apps/jellyfin.yml",
+        "url": "https://github.com/minhtribtc/TQH-HomeServer"
+      },
+      "title": "TQH Jellyfin NAS",
+      "type": 3
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "Plex organizes your video, music, and photo collections and streams them to all of your screens.",
+      "logo": "https://appslist.heimdall.site/icons/plex.png",
+      "name": "TQH-Plex-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "TQH-Apps/plex.yml",
+        "url": "https://github.com/minhtribtc/TQH-HomeServer"
+      },
+      "title": "TQH Plex NAS",
+      "type": 3
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "Emby organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
+      "logo": "https://appslist.heimdall.site/icons/emby.png",
+      "name": "TQH-Emby-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "TQH-Apps/emby.yml",
+        "url": "https://github.com/minhtribtc/TQH-HomeServer"
+      },
+      "title": "TQH Emby NAS",
+      "type": 3
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "[pyLoad](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
+      "privileged": true,
+      "name": "TQH-CPU-RAM-Info-NAS",
+      "image": "mauricenino/dashdot",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/pyload.png",
+      "platform": "linux",
+      "ports": [
+        "7777:3001/tcp"
+      ],
+      "title": "TQH CPU RAM Info NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/mnt/host",
+          "bind": "/",
+          "readonly": true
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Syncthing-NAS",
+      "image": "linuxserver/syncthing:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Syncthing-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/syncthing.svg",
+      "platform": "linux",
+      "ports": [
+        "8384:8384/tcp",
+        "21027:21027/udp",
+        "22000:22000/tcp"
+      ],
+      "title": "TQH Syncthing NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Syncthing-NAS"
+
+        },
+        {
+          "container": "/sync",
+          "bind": "/srv"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "[pyLoad](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Download-Manager-NAS",
+      "image": "lscr.io/linuxserver/pyload-ng:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Download-Manager-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/pyload.png",
+      "platform": "linux",
+      "ports": [
+        "8000:8000/tcp",
+        "9666:9666/tcp"
+      ],
+      "title": "TQH Download Manager NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Download-Manager-NAS"
+
+        },
+        {
+          "container": "/downloads",
+          "bind": "/srv/TQH/downloads"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "[Chromium](https://www.chromium.org/chromium-projects/) is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "Homepage",
+          "name": "CHROME_CLI",
+          "default": "https://tqh.vn/"
+        }
+      ],
+      "name": "TQH-Chromium-NAS",
+      "image": "lscr.io/linuxserver/chromium:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Chromium-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://tqh.cstsoft.net/icons/chromium.png",
+      "platform": "linux",
+      "ports": [
+        "4000:3000/tcp",
+        "4001:3001/tcp"
+      ],
+      "title": "TQH Chromium NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Chromium-NAS"
+
+        },
+        {
+          "container": "/config/Downloads",
+          "bind": "/srv/TQH/downloads"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Firefox-NAS",
+      "image": "lscr.io/linuxserver/firefox:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Firefox-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://tqh.cstsoft.net/icons/firefox.png",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp",
+        "3001:3001/tcp"
+      ],
+      "title": "TQH Firefox NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Firefox-NAS"
+
+        },
+        {
+          "container": "/config/Downloads",
+          "bind": "/srv/TQH/downloads"
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "Radarr - A fork of Sonarr to work with movies \u00ef\u00bf\u00bd la Couchpotato.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Radarr-NAS",
+      "image": "lscr.io/linuxserver/radarr:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Radarr-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/radarr.svg",
+      "platform": "linux",
+      "ports": [
+        "7878:7878/tcp"
+      ],
+      "title": "TQH Radarr NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Radarr-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-Sonarr-NAS",
+      "image": "lscr.io/linuxserver/sonarr:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Sonarr-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/sonarr.svg",
+      "platform": "linux",
+      "ports": [
+        "8989:8989/tcp"
+      ],
+      "title": "TQH Sonarr NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Sonarr-NAS"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps",
+        "TQH NAS"
+      ],
+      "description": "JDownloader docker image",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-JDownloader-NAS",
+      "image": "jlesage/jdownloader-2:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-JDownloader-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/jdownloader.png",
+      "platform": "linux",
+      "ports": [
+        "5800:5800/tcp"
+      ],
+      "title": "TQH JDownloader NAS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-JDownloader-NAS"
+
+        },
+        {
+          "container": "/output",
+          "bind": "/srv/TQH/downloads"
+
+        },
+        {
+          "container": "/srv",
+          "bind": "/srv"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it\u2019ll cover ALL your home devices, and you don\u2019t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
+      "name": "TQH-AdguardHome",
+      "image": "adguard/adguardhome:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-AdguardHome",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/adguardhome.png",
+      "platform": "linux",
+      "ports": [
+        "53:53/tcp",
+        "53:53/udp",
+        "67:67/udp",
+        "68:68/udp",
+        "80:80/tcp",
+        "443:443/tcp",
+        "443:443/udp",
+        "3000:3000/tcp",
+        "853:853/tcp",
+        "853:853/udp",
+        "5443:5443/udp",
+        "5443:5443/tcp",
+        "6060:6060/tcp"
+      ],
+      "title": "TQH AdGuard Home",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/opt/adguardhome/work",
+          "bind": "TQH-AdguardHome-work"
+
+        },
+        {
+          "container": "/opt/adguardhome/conf",
+          "bind": "TQH-AdguardHome-conf"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+      "env": [
+        {
+          "label": "HTTP Port",
+          "name": "PORT",
+          "default": "80"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-DashBoard",
+      "image": "ghcr.io/ajnart/homarr:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-DashBoard",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/heimdall.png",
+      "platform": "linux",
+      "title": "TQH DashBoard",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/run/docker.sock",
+          "bind": "/var/run/docker.sock"
+        },
+        {
+          "container": "/app/data/configs",
+          "bind": "TQH-DashBoard-configs"
+        },
+        {
+          "container": "/data",
+          "bind": "TQH-DashBoard-data"
+        },
+        {
+          "container": "/app/public/icons",
+          "bind": "TQH-DashBoard-icons"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        }
+      ],
+      "name": "TQH-DashBoard",
+      "image": "lscr.io/linuxserver/heimdall:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-DashBoard",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/heimdall.png",
+      "platform": "linux",
+      "title": "TQH DashBoard",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-DashBoard"
+
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"      ],
+      "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence. First, go to duckdns site, register your subdomain and retrieve your token. Then run the docker create command above with your subdomain(s) and token. It will update your IP with the DuckDNS service every 5 minutes.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAINS",
+          "description": "Nhập tên miền phụ DuckDNS"
+        },
+        {
+          "label": "Duck DNS TOKEN",
+          "name": "TOKEN",
+          "description": "Nhập Duck DNS TOKEN"
+        },
+        {
+          "label": "UPDATE_IP",
+          "name": "UPDATE_IP",
+          "default": "ipv4",
+          "preset": true
+        },
+        {
+          "label": "LOG_FILE",
+          "name": "LOG_FILE",
+          "default": "false",
+          "preset": true
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
+      "image": "lscr.io/linuxserver/duckdns:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://tqh.cstsoft.net/icons/duckdns.png",
+      "platform": "linux",
+      "title": "TQH Duck DNS",
+      "type": 1
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
+      "name": "TQH-Vaultwarden",
+      "image": "vaultwarden/server:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "hostname": "TQH-Vaultwarden",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/bitwarden.svg",
+      "platform": "linux",
+      "ports": [
+        "8680:80/tcp",
+        "8643:443/tcp"
+      ],
+      "title": "TQH Vaultwarden",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data",
+          "bind": "TQH-Vaultwarden"
+
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "The most popular open-source database",
+      "env": [
+        {
+          "label": "MYSQL ROOT PASSWORD",
+          "name": "MYSQL_ROOT_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MYSQL DATABASE",
+          "name": "MYSQL_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo một DATABASE mới"
+        }
+      ],
+      "name": "TQH-MySQL",
+      "image": "mysql",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://tqh.cstsoft.net/icons/mysql.png",
+      "platform": "linux",
+      "ports": [
+        "3306:3306/tcp"
+      ],
+      "title": "TQH MySQL",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/mysql",
+          "bind": "TQH-MySQL"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "The most popular open-source database",
+      "env": [
+        {
+          "label": "MARIADB ROOT PASSWORD",
+          "name": "MARIADB_ROOT_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập ROOT PASSWORD"
+        },
+        {
+          "label": "MARIADB DATABASE",
+          "name": "MARIADB_DATABASE",
+          "default": "homeserver",
+          "description": "Tạo một DATABASE mới"
+        }
+      ],
+      "name": "TQH-MariaDB",
+      "image": "mariadb",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://tqh.cstsoft.net/icons/mariadb.png",
+      "platform": "linux",
+      "ports": [
+        "3306:3306/tcp"
+      ],
+      "title": "TQH MariaDB",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/mysql",
+          "bind": "TQH-MariaDB"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "The most advanced open-source database",
+      "env": [
+        {
+          "label": "POSTGRES PASSWORD",
+          "name": "POSTGRES_PASSWORD",
+          "default": "Smart*home@TQH",
+          "description": "Tạo mật khẩu người dùng mới"
+        },
+        {
+          "label": "POSTGRES DATABASE",
+          "name": "POSTGRES_DB",
+          "default": "homeserver",
+          "description": "Tạo một DATABASE mới"
+        }
+      ],
+      "name": "TQH-PostgreSQL",
+      "image": "postgres",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://tqh.cstsoft.net/icons/postgresql.png",
+      "platform": "linux",
+      "ports": [
+        "5432:5432/tcp"
+      ],
+      "title": "TQH PostgreSQL",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/postgresql/data",
+          "bind": "TQH-Postgres"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+      "env": [
+        {
+          "label": "User ID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "Group ID",
+          "name": "PGID",
+          "default": "100"
+        },
+        {
+          "label": "Time Zone",
+          "name": "TZ",
+          "default": "Asia/Ho_Chi_Minh"
+        },
+        {
+          "label": "PMA_ARBITRARY",
+          "name": "PMA_ARBITRARY",
+          "default": "1"
+        }
+
+      ],
+      "name": "TQH-Phpmyadmin",
+      "image": "lscr.io/linuxserver/phpmyadmin:latest",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/phpmyadmin.png",
+      "platform": "linux",
+      "ports": [
+        "2080:80/tcp"
+      ],
+      "title": "TQH Phpmyadmin",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "TQH-Phpmyadmin"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "TQH Apps"
+      ],
+      "description": "WordPress setup with a MySQL database",
+      "env": [
+        {
+          "label": "DATABASE HOST",
+          "name": "WORDPRESS_DB_HOST",
+          "default": "10.0.0.7:3306",
+          "description": "Nhập địa chỉ ip hoặc hostname và port của DATABASE"
+        },
+        {
+          "label": "DATABASE USER",
+          "name": "WORDPRESS_DB_USER",
+          "default": "root",
+          "description": "Nhập DATABASE username"
+        },
+        {
+          "label": "DATABASE PASSWORD",
+          "name": "WORDPRESS_DB_PASSWORD",
+          "default": "Smart*home@TQH.vn",
+          "description": "Nhập DATABASE password"
+        },
+        {
+          "label": "DATABASE NAME",
+          "name": "WORDPRESS_DB_NAME",
+          "default": "homeserver",
+          "description": "Nhập tên DATABASE"
+        }
+      ],
+      "name": "TQH-WordPress",
+      "image": "wordpress",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.tqh.vn' target='_blank'>TQH-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://appslist.heimdall.site/icons/wordpress.svg",
+      "platform": "linux",
+      "ports": [
+        "1080:80/tcp"
+      ],
+      "title": "TQH WordPress",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/www/html",
+          "bind": "TQH-WordPress"
+        }
+      ]
+    }
+
+  ]
+}
