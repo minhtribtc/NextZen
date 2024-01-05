@@ -61,6 +61,32 @@
         "NextZen NAS"
       ],
       "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
+      "env": [
+        {
+          "label": "CLOUD FOLDER",
+          "name": "NEXTCLOUD_DATADIR",
+          "default": "/DATA/cloud",
+          "description": "Nhập đường dẫn thư mục chứa dữ liệu, mặc định: /DATA/cloud"
+        },
+        {
+          "label": "MAX UPLOAD SIZE",
+          "name": "NEXTCLOUD_UPLOAD_LIMIT",
+          "default": "1000G",
+          "description": "Nhập kích thước file upload tối đa, mặc định: 1000 GB mỗi file"
+        },
+        {
+          "label": "MAX UPLOAD TIME",
+          "name": "NEXTCLOUD_MAX_TIME",
+          "default": "36000",
+          "description": "Nhập thời gian upload tối đa, mặc định: 36000 giây mỗi file"
+        },
+        {
+          "label": "TALK PORT",
+          "name": "TALK_PORT",
+          "default": "58743",
+          "description": "Nhập Port sử dụng cho Nextcloud talk, mặc định: 58743"
+        }
+      ],
       "logo": "https://appslist.heimdall.site/icons/jellyfin.svg",
       "name": "NextZen-Jellyfin-NAS",
       "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.NextZen.vn' target='_blank'>NextZen-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
