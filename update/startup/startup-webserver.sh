@@ -42,7 +42,7 @@ clpctl vhost-template:add --name='NextZen-CameraNVR' --file=https://raw.githubus
 
 #Update CameraNVR
 clpctl vhost-template:delete --name='NextZen-Vaultwarden'
-clpctl vhost-template:add --name='NextZen-CameraNVR' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Vaultwarden
+clpctl vhost-template:add --name='NextZen-Vaultwarden' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Vaultwarden
 
 
 rm startup-webserver.sh
