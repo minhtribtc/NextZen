@@ -41,4 +41,4 @@ clpctl vhost-template:delete --name='NextZen-CameraNVR'
 clpctl vhost-template:add --name='NextZen-CameraNVR' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-CameraNVR
 
 
-rm daily-webserver.sh
+rm startup-webserver.sh
