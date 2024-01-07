@@ -83,8 +83,14 @@ if docker inspect --format '{{.State.Running}}' share-to-nas 2>/dev/null | grep 
 else
     echo "share-to-nas không đang chạy. Đang xoá container và khởi động lại docker..."
     docker rm share-to-nas 2>/dev/null || echo "Không thể xoá share-to-nas. Có thể container không tồn tại."
-    docker run -d --restart=always --name share-to-nas -v /home:/srv -it -p 139:139 -p 445:445 dperson/samba -p -u "root;smartyourlife;0;0;0" -s "webserver;/srv;yes;no;no;root,root" -W -r
-
+    #share to NAS
+    docker run -d --restart=always\
+     --name share-to-nas\
+     -v /home:/srv\
+     -v /NextZen/smb.conf:/etc/samba/smb.conf\
+     -p 139:139\
+     -p 445:445\
+     dperson/samba -u "root;Oxu7aUUb7waBLo53rMfNqfOo"
 fi
 
 
