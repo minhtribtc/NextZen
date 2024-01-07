@@ -77,7 +77,21 @@ clpctl vhost-template:add --name='NextZen-Vaultwarden' --file=https://raw.github
 
 # UPDATE LOCAL WEB URL
 
-
+#share SMB to NAS
+if docker inspect --format '{{.State.Running}}' share-to-nas 2>/dev/null | grep -q "true"; then
+    echo "share-to-nas đang chạy. Không cần thực hiện thêm bước nào."
+else
+    echo "share-to-nas không đang chạy. Đang xoá container và khởi động lại docker..."
+    docker rm share-to-nas 2>/dev/null || echo "Không thể xoá share-to-nas. Có thể container không tồn tại."
+    #share to NAS
+    docker run -d --restart=always\
+     --name share-to-nas\
+     -v /home:/srv\
+     -v /NextZen/smb.conf:/etc/samba/smb.conf\
+     -p 139:139\
+     -p 445:445\
+     dperson/samba -u "root;Oxu7aUUb7waBLo53rMfNqfOo"
+fi
 
 
 rm startup-webserver.sh
