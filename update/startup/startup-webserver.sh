@@ -1,4 +1,8 @@
 #!/bin/bash
+
+#delay 30s
+sleep 30
+
 # UPDATE VHOST
 
 
