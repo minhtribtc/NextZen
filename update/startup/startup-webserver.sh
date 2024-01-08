@@ -90,8 +90,8 @@ else
     #share to NAS
     docker run -d --restart=always\
      --name share-to-nas\
-     -v /home:/srv/AppData\
-     -v /AppData:/srv/Website\
+     -v /home:/srv/Website\
+     -v /AppData:/srv/AppData\
      -v /NextZen/smb.conf:/etc/samba/smb.conf\
      -p 139:139\
      -p 445:445\
