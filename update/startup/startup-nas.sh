@@ -134,3 +134,4 @@ else
 fi
 
 rm startup-nas.sh
+rm /tmp/startup-nas.sh
