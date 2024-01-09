@@ -51,14 +51,15 @@ else
     echo "Đã tạo liên kết đến thư mục TQH trong thư mục c với tên là others-storage."
 fi
 
-# Kiểm tra xem thư mục /DATA/NextZen có tồn tại hay không
-if [ -d "$nextzendata" ]; then
-    echo "Thư mục nextzendata đã tồn tại. Không thực hiện thêm bước nào."
-else
-    # Nếu thư mục nextzendata không tồn tại, tạo liên kết đến thư mục DATA trong thư mục media
-    ln -s /NextZen /DATA/NextZen
-    echo "Đã tạo liên kết đến thư mục DATA trong thư mục NextZen với tên là NextZen."
-fi
+##### Kiểm tra xem thư mục /DATA/NextZen có tồn tại hay không
+# if [ -d "$nextzendata" ]; then
+    # echo "Thư mục nextzendata đã tồn tại. Không thực hiện thêm bước nào."
+# else
+    # # Nếu thư mục nextzendata không tồn tại, tạo liên kết đến thư mục DATA trong thư mục media
+    # ln -s /NextZen /DATA/NextZen
+    # echo "Đã tạo liên kết đến thư mục DATA trong thư mục NextZen với tên là NextZen."
+# fi
+
 # Kiểm tra xem thư mục DATAFILES có tồn tại hay không
 if [ -d "$DATAFILES" ]; then
     echo "Thư mục DATAFILES đã tồn tại. Không thực hiện thêm bước nào."
@@ -102,6 +103,15 @@ else
     # Nếu thư mục WebServer không tồn tại, tạo liên kết đến thư mục /DATA trong thư mục /mnt/WebServer
     ln -s /mnt/WebServer /DATA/WebServer
     echo "Đã tạo liên kết đến thư mục /DATA/WebServer trong thư mục srv /mnt/WebServer tên là WebServer."
+fi
+
+# Kiểm tra xem thư mục /DATA có tồn tại hay không
+if [ -d "$DATA" ]; then
+    echo "Thư mục /DATA đã tồn tại. Không thực hiện thêm bước nào."
+else
+    # Nếu thư mục /DATA không tồn tại, tắt NextZenOS
+    sudo systemctl stop casaos*.service
+    echo "Đã tắt NextZenOS vui lòng chọn vùng lưu trữ mặc định"
 fi
 
 # kiểm tra portainer_agent có chạy hay không
