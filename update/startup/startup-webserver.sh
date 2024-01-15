@@ -98,5 +98,17 @@ else
      dperson/samba -u "root;Oxu7aUUb7waBLo53rMfNqfOo"
 fi
 
+NETWORK_NAME="Lan_Network"
 
+# Kiểm tra xem mạng docker Lan_Network có tồn tại hay không
+if docker network inspect "$NETWORK_NAME" &> /dev/null; then
+  echo "Mạng $NETWORK_NAME đã tồn tại."
+else
+  # Nếu mạng không tồn tại, tạo mạng mới
+  echo "Mạng $NETWORK_NAME không tồn tại, đang tạo mạng mới..."
+  docker network create -d macvlan --subnet=10.0.0.0/24 --gateway=10.0.0.1 -o parent=enp6s18 $NETWORK_NAME
+  echo "Mạng $NETWORK_NAME đã được tạo thành công."
+fi
+
+rm /tmp/startup-webserver.sh
 rm startup-webserver.sh
