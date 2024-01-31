@@ -1297,7 +1297,7 @@
       "platform": "windows",
       "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
-      "image": "microsoft/mssql-server-windows-express:latest",
+      "image": "microsoft/mssql-server-windows-express:2017-latest",
       "ports": ["1433/tcp"],
       "env": [
         {
