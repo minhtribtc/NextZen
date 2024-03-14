@@ -54,4 +54,11 @@ client_body_buffer_size 512k;
 proxy_read_timeout 86400s;
 client_max_body_size 0;
 
+error_page 502 /502.html;
+
+location = /502.html {
+  return 302 https://nextzen.cstsoft.net/help/wireguard;
+}
+
+
 }

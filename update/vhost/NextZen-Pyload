@@ -22,7 +22,7 @@ server {
   index index.html;
 
   location @reverse_proxy {
-    proxy_pass http://10.0.0.4:9999;
+    proxy_pass http://10.0.0.4:8000;
     proxy_http_version 1.1;
     proxy_set_header X-Forwarded-Host $host;
     proxy_set_header X-Forwarded-Server $host;
@@ -57,7 +57,7 @@ client_max_body_size 0;
 error_page 502 /502.html;
 
 location = /502.html {
-  return 302 https://nextzen.cstsoft.net/help/nasfile;
+  return 302 https://nextzen.cstsoft.net/help/pyload;
 }
 
 
