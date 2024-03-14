@@ -54,9 +54,9 @@ clpctl vhost-template:add --name='NextZen-NASfile' --file=https://raw.githubuser
 clpctl vhost-template:delete --name='NextZen-NCAIO'
 clpctl vhost-template:add --name='NextZen-NCAIO' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-NCAIO
 
-# 11 Update Jellyfin
-clpctl vhost-template:delete --name='NextZen-Jellyfin'
-clpctl vhost-template:add --name='NextZen-Jellyfin' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Jellyfin
+# 11 Update pyload
+clpctl vhost-template:delete --name='NextZen-Pyload'
+clpctl vhost-template:add --name='NextZen-Pyload' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Pyload
 
 # 12 Update Wireguard
 clpctl vhost-template:delete --name='NextZen-Wireguard'
@@ -77,6 +77,19 @@ clpctl vhost-template:add --name='NextZen-CameraNVR' --file=https://raw.githubus
 #Update Vaultwarden
 clpctl vhost-template:delete --name='NextZen-Vaultwarden'
 clpctl vhost-template:add --name='NextZen-Vaultwarden' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Vaultwarden
+
+#Update Syncthing
+clpctl vhost-template:delete --name='NextZen-Syncthing'
+clpctl vhost-template:add --name='NextZen-Syncthing' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Syncthing
+
+#Update Radarr
+clpctl vhost-template:delete --name='NextZen-Radarr'
+clpctl vhost-template:add --name='NextZen-Radarr' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Radarr
+
+#Update Sonarr
+clpctl vhost-template:delete --name='NextZen-Sonarr'
+clpctl vhost-template:add --name='NextZen-Sonarr' --file=https://raw.githubusercontent.com/minhtribtc/NextZen/main/update/vhost/NextZen-Sonarr
+
 
 
 # UPDATE LOCAL WEB URL
