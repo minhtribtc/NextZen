@@ -4,51 +4,23 @@ srv=/srv
 mnt=/mnt
 media=/media
 DATA=/DATA
-DATANextZen=/NextZen/DATA
-SYSTEMNextZen=/NextZen/SYSTEM
+mntDATA=/mnt/DATA
+#SYSTEMNextZen=/NextZen/SYSTEM
 nextzen=/NextZen
-ProxmoxServer=/NextZen/ProxmoxServer
-Webserver=/NextZen/Webserver
+#ProxmoxServer=/mnt/ProxmoxServer
+#Webserver=/NextZen/Webserver
 
 #delay 30s
 sleep 30
 
 
-# Kiểm tra xem thư mục DATANextZen có tồn tại hay không
-if [ -d "$DATANextZen" ]; then
-    echo "Thư mục DATANextZen đã tồn tại. Không thực hiện thêm bước nào."
+# Kiểm tra xem thư mục mntDATA có tồn tại hay không
+if [ -d "$mntDATA" ]; then
+    echo "Thư mục mntDATA đã tồn tại. Không thực hiện thêm bước nào."
 else
-    # Nếu thư mục DATANextZen không tồn tại, tạo liên kết đến thư mục DATA trong thư mục NextZen
-    ln -s /DATA /NextZen/DATA
-    echo "Đã tạo liên kết đến thư mục DATA trong thư mục NextZen với tên là DATA."
-fi
-
-# Kiểm tra xem thư mục SYSTEMNextZen có tồn tại hay không
-if [ -d "$SYSTEMNextZen" ]; then
-    echo "Thư mục SYSTEMNextZen đã tồn tại. Không thực hiện thêm bước nào."
-else
-    # Nếu thư mục SYSTEMNextZen không tồn tại, tạo liên kết đến thư mục / trong thư mục NextZen
-    ln -s / /NextZen/SYSTEM
-    echo "Đã tạo liên kết đến thư mục / trong thư mục NextZen với tên là SYSTEM."
-fi
-
-
-# Kiểm tra xem thư mục /NextZen/ProxmoxServer có tồn tại hay không
-if [ -d "$ProxmoxServer" ]; then
-    echo "Thư mục ProxmoxServer đã tồn tại. Không thực hiện thêm bước nào."
-else
-    # Nếu thư mục ProxmoxServer không tồn tại, tạo liên kết đến thư mục /NextZen trong thư mục /mnt/ProxmoxServer
-    ln -s /mnt/ProxmoxServer /NextZen/ProxmoxServer
-    echo "Đã tạo liên kết đến thư mục /NextZen/ProxmoxServer trong thư mục srv /mnt/ProxmoxServer tên là ProxmoxServer."
-fi
-
-# Kiểm tra xem thư mục /NextZen/Webserver có tồn tại hay không
-if [ -d "$Webserver" ]; then
-    echo "Thư mục Webserver đã tồn tại. Không thực hiện thêm bước nào."
-else
-    # Nếu thư mục Webserver không tồn tại, tạo liên kết đến thư mục /NextZen trong thư mục /mnt/Webserver
-    ln -s /mnt/Webserver /NextZen/Webserver
-    echo "Đã tạo liên kết đến thư mục /NextZen/Webserver trong thư mục srv /mnt/Webserver tên là Webserver."
+    # Nếu thư mục mntDATA không tồn tại, tạo liên kết đến thư mục DATA trong thư mục mnt
+    ln -s /DATA /mnt/DATA
+    echo "Đã tạo liên kết đến thư mục DATA trong thư mục mnt với tên là DATA."
 fi
 
 # Kiểm tra xem thư mục /DATA có tồn tại hay không
