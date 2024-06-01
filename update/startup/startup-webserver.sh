@@ -96,10 +96,10 @@ clpctl vhost-template:add --name='NextZEN-Syncthing' --file=https://raw.githubus
 
 #share SMB to NAS
 if docker inspect --format '{{.State.Running}}' share-to-nas 2>/dev/null | grep -q "true"; then
-    echo "share-to-nas đang chạy. Không cần thực hiện thêm bước nào."
+    echo "share-to-nas dang ch?y. Không c?n th?c hi?n thêm bu?c nào."
 else
-    echo "share-to-nas không đang chạy. Đang xoá container và khởi động lại docker..."
-    docker rm share-to-nas 2>/dev/null || echo "Không thể xoá share-to-nas. Có thể container không tồn tại."
+    echo "share-to-nas không dang ch?y. Ðang xoá container và kh?i d?ng l?i docker..."
+    docker rm share-to-nas 2>/dev/null || echo "Không th? xoá share-to-nas. Có th? container không t?n t?i."
     #share to NAS
     docker run -d --restart=always\
      --name share-to-nas\
@@ -113,14 +113,14 @@ fi
 
 NETWORK_NAME="Lan_Network"
 
-# Kiểm tra xem mạng docker Lan_Network có tồn tại hay không
+# Ki?m tra xem m?ng docker Lan_Network có t?n t?i hay không
 #if docker network inspect "$NETWORK_NAME" &> /dev/null; then
-#  echo "Mạng $NETWORK_NAME đã tồn tại."
+#  echo "M?ng $NETWORK_NAME dã t?n t?i."
 #else
-#  # Nếu mạng không tồn tại, tạo mạng mới
-#  echo "Mạng $NETWORK_NAME không tồn tại, đang tạo mạng mới..."
+#  # N?u m?ng không t?n t?i, t?o m?ng m?i
+#  echo "M?ng $NETWORK_NAME không t?n t?i, dang t?o m?ng m?i..."
 #  docker network create -d macvlan --subnet=10.0.0.0/24 --gateway=10.0.0.1 -o parent=enp6s18 $NETWORK_NAME
-#  echo "Mạng $NETWORK_NAME đã được tạo thành công."
+#  echo "M?ng $NETWORK_NAME dã du?c t?o thành công."
 #fi
 
 rm /tmp/startup-webserver.sh
