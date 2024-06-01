@@ -2,7 +2,7 @@
 
 #delay 30s
 sleep 30
-sudo -i
+
 # UPDATE VHOST
 
 
