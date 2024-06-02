@@ -14,16 +14,6 @@ nextzen=/NextZen
 sleep 30
 
 
-# Kiểm tra xem thư mục mntDATA có tồn tại hay không
-if [ -d "$mntDATA" ]; then
-    echo "Thư mục mntDATA đã tồn tại. Không thực hiện thêm bước nào."
-else
-    # Nếu thư mục mntDATA không tồn tại, tạo liên kết đến thư mục DATA trong thư mục mnt
-    ln -s /DATA /mnt/DATA
-    echo "Đã tạo liên kết đến thư mục DATA trong thư mục mnt với tên là DATA."
-fi
-#delay 30s
-sleep 30
 
 
 #update nextcloud ip
