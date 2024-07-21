@@ -72,7 +72,7 @@ if docker network inspect "$NETWORK_NAME" &> /dev/null; then
 else
   # Nếu mạng không tồn tại, tạo mạng mới
   echo "Mạng $NETWORK_NAME không tồn tại, đang tạo mạng mới..."
-  docker network create -d macvlan --subnet=10.0.0.0/24 --gateway=10.0.0.1 -o parent=enp6s18 $NETWORK_NAME
+  docker network create -d macvlan --subnet=10.0.0.0/24 --gateway=10.0.0.1 -o parent=br0 $NETWORK_NAME
   echo "Mạng $NETWORK_NAME đã được tạo thành công."
 fi
 
