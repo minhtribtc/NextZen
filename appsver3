@@ -1,0 +1,110 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "id": 1,
+      "categories": [
+        "docker",
+        "NextZen Apps"
+      ],
+      "description": "Cloudflare DDNS - A small and fast DDNS updater for Cloudflare.",
+      "env": [
+        {
+          "label": "DOMAIN",
+          "name": "ZONE",
+          "description": "Nhập tên miền chính, ví dụ: NextZen.vn"
+        },
+        {
+          "label": "SUBDOMAIN",
+          "name": "SUBDOMAIN",
+          "description": "Nhập tên miền phụ nếu có, ví dụ: CLOUD.NextZen.vn thì chỉ nhập duy nhất CLOUD"
+        },
+        {
+          "label": "EMAIL",
+          "name": "EMAIL",
+          "description": "Nhập email đã đăng ký tài khoản Cloudflare quản lý tên miền"
+        },
+        {
+          "label": "GLOBAL API KEY",
+          "name": "API_KEY",
+          "description": "Nhập Cloudflare GLOBAL API KEY theo tài khoản"
+        }
+      ],
+      "name": "Nhập đầy đủ tên miền tại đây",
+      "image": "oznu/cloudflare-ddns",
+      "network": "bridge",
+      "restart_policy": "unless-stopped",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.NextZen.vn' target='_blank'>NextZen-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "logo": "https://raw.githubusercontent.com/minhtribtc/NextZen/main/icons/cloudflare.svg",
+      "platform": "linux",
+      "title": "NextZen Cloudflare DDNS",
+      "type": 1,
+      "ports": [
+        "5000/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/var/lib/registry"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categories": [
+        "docker",
+        "NextZen Apps",
+        "NextZen NAS"
+      ],
+      "description": "Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!",
+      "env": [
+        {
+          "label": "CLOUD FOLDER",
+          "name": "NEXTCLOUD_DATADIR",
+          "default": "/DATA/cloud",
+          "description": "Nhập đường dẫn thư mục chứa dữ liệu, mặc định: /DATA/cloud"
+        },
+        {
+          "label": "MAX UPLOAD SIZE",
+          "name": "NEXTCLOUD_UPLOAD_LIMIT",
+          "default": "10G",
+          "description": "Nhập kích thước file upload tối đa, mặc định: 10 GB mỗi file"
+        },
+        {
+          "label": "MAX UPLOAD TIME",
+          "name": "NEXTCLOUD_MAX_TIME",
+          "default": "3600",
+          "description": "Nhập thời gian upload tối đa, mặc định: 3600 giây mỗi file"
+        },
+        {
+          "label": "TALK PORT",
+          "name": "TALK_PORT",
+          "default": "3478",
+          "description": "Nhập Port sử dụng cho Nextcloud talk, mặc định: 3478"
+        },
+        {
+          "name": "REGISTRY_PROXY_REMOTEURL",
+          "default": "https://registry-1.docker.io",
+          "preset": true
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/minhtribtc/NextZen/main/icons/nextcloud-aio.png",
+      "name": "NextZen-Nextcloud-AIO-NAS",
+      "note": "Ứng dụng được cấu hình dành riêng cho <a href='https://www.NextZen.vn' target='_blank'>NextZen-HomeServer</a>.</p><p>Đưa sang hệ thống khác sẽ xảy ra lỗi hoặc hoạt động không chính xác.</p><p>",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "NextZen-Apps/nextcloudaio.yml",
+        "url": "https://github.com/minhtribtc/NextZen"
+      },
+      "title": "NextZen Nextcloud AIO NAS",
+      "type": 3,
+      "ports": [
+        "5000/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/var/lib/registry"
+        }
+      ]
+    }
+  ]
+}
